@@ -47,5 +47,13 @@ namespace ProyectoMarjorie
             CrearUsuario crearUsuario = new CrearUsuario();
             crearUsuario.ShowDialog();
         }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (tbUsername.Text != "")
+            {
+                btnLogin.Enabled = true;
+            }
+        }
     }
 }
