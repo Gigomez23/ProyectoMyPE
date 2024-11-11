@@ -1,0 +1,15 @@
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\ProyectoMarjorie.exe.config
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\ProyectoMarjorie.exe
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\ProyectoMarjorie.pdb
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\MaterialSkin.dll
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.csproj.AssemblyReference.cache
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.Properties.Resources.resources
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.csproj.GenerateResource.cache
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.csproj.CoreCompileInputs.cache
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\Proyecto.16A9BFD6.Up2Date
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.exe
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.pdb
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.LoginForm.resources
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.forms.CrearUsuario.resources
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.forms.FormAdmin.resources
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.forms.FormEstudiante.resources
