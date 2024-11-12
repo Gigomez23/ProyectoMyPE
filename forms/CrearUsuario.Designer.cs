@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbNombre = new MaterialSkin.Controls.MaterialTextBox();
-            this.lblNombre = new MaterialSkin.Controls.MaterialLabel();
+            this.tbName = new MaterialSkin.Controls.MaterialTextBox();
+            this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.tbCif = new MaterialSkin.Controls.MaterialTextBox();
             this.lblCif = new MaterialSkin.Controls.MaterialLabel();
-            this.lblFechaNacimiento = new MaterialSkin.Controls.MaterialLabel();
-            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.lblBirthDate = new MaterialSkin.Controls.MaterialLabel();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.btnAddUser = new MaterialSkin.Controls.MaterialButton();
             this.btnReturn = new MaterialSkin.Controls.MaterialButton();
             this.fabAddClass = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.SuspendLayout();
             // 
-            // tbNombre
+            // tbName
             // 
-            this.tbNombre.AnimateReadOnly = false;
-            this.tbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbNombre.Depth = 0;
-            this.tbNombre.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbNombre.LeadingIcon = null;
-            this.tbNombre.Location = new System.Drawing.Point(236, 127);
-            this.tbNombre.MaxLength = 50;
-            this.tbNombre.MouseState = MaterialSkin.MouseState.OUT;
-            this.tbNombre.Multiline = false;
-            this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(269, 50);
-            this.tbNombre.TabIndex = 0;
-            this.tbNombre.Text = "";
-            this.tbNombre.TrailingIcon = null;
+            this.tbName.AnimateReadOnly = false;
+            this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbName.Depth = 0;
+            this.tbName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbName.LeadingIcon = null;
+            this.tbName.Location = new System.Drawing.Point(236, 127);
+            this.tbName.MaxLength = 50;
+            this.tbName.MouseState = MaterialSkin.MouseState.OUT;
+            this.tbName.Multiline = false;
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(269, 50);
+            this.tbName.TabIndex = 0;
+            this.tbName.Text = "";
+            this.tbName.TrailingIcon = null;
             // 
-            // lblNombre
+            // lblName
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Depth = 0;
-            this.lblNombre.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblNombre.Location = new System.Drawing.Point(144, 146);
-            this.lblNombre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(61, 19);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre:";
+            this.lblName.AutoSize = true;
+            this.lblName.Depth = 0;
+            this.lblName.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblName.Location = new System.Drawing.Point(144, 146);
+            this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(61, 19);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Nombre:";
             // 
             // tbCif
             // 
@@ -97,24 +97,24 @@
             this.lblCif.TabIndex = 3;
             this.lblCif.Text = "CIF:";
             // 
-            // lblFechaNacimiento
+            // lblBirthDate
             // 
-            this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Depth = 0;
-            this.lblFechaNacimiento.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(72, 306);
-            this.lblFechaNacimiento.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(133, 19);
-            this.lblFechaNacimiento.TabIndex = 4;
-            this.lblFechaNacimiento.Text = "Fecha Nacimiento:";
+            this.lblBirthDate.AutoSize = true;
+            this.lblBirthDate.Depth = 0;
+            this.lblBirthDate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblBirthDate.Location = new System.Drawing.Point(72, 306);
+            this.lblBirthDate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblBirthDate.Name = "lblBirthDate";
+            this.lblBirthDate.Size = new System.Drawing.Size(133, 19);
+            this.lblBirthDate.TabIndex = 4;
+            this.lblBirthDate.Text = "Fecha Nacimiento:";
             // 
-            // dtpFechaNacimiento
+            // dtpBirthDate
             // 
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(236, 306);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(228, 20);
-            this.dtpFechaNacimiento.TabIndex = 5;
+            this.dtpBirthDate.Location = new System.Drawing.Point(236, 306);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(228, 20);
+            this.dtpBirthDate.TabIndex = 5;
             // 
             // btnAddUser
             // 
@@ -142,6 +142,7 @@
             this.btnReturn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnReturn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnReturn.Depth = 0;
+            this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnReturn.HighEmphasis = true;
             this.btnReturn.Icon = null;
             this.btnReturn.Location = new System.Drawing.Point(75, 408);
@@ -180,12 +181,12 @@
             this.Controls.Add(this.fabAddClass);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.dtpFechaNacimiento);
-            this.Controls.Add(this.lblFechaNacimiento);
+            this.Controls.Add(this.dtpBirthDate);
+            this.Controls.Add(this.lblBirthDate);
             this.Controls.Add(this.lblCif);
             this.Controls.Add(this.tbCif);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.tbNombre);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.tbName);
             this.MaximizeBox = false;
             this.Name = "CrearUsuario";
             this.Sizable = false;
@@ -199,12 +200,12 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTextBox tbNombre;
-        private MaterialSkin.Controls.MaterialLabel lblNombre;
+        private MaterialSkin.Controls.MaterialTextBox tbName;
+        private MaterialSkin.Controls.MaterialLabel lblName;
         private MaterialSkin.Controls.MaterialTextBox tbCif;
         private MaterialSkin.Controls.MaterialLabel lblCif;
-        private MaterialSkin.Controls.MaterialLabel lblFechaNacimiento;
-        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private MaterialSkin.Controls.MaterialLabel lblBirthDate;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
         private MaterialSkin.Controls.MaterialButton btnAddUser;
         private MaterialSkin.Controls.MaterialButton btnReturn;
         private MaterialSkin.Controls.MaterialFloatingActionButton fabAddClass;
