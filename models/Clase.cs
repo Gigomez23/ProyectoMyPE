@@ -9,6 +9,7 @@ namespace ProyectoMarjorie.models
     internal struct Clase
     {
         public string Nombre {  get; set; }
+        public string NombreProfesor { get; set; }
         public string CorreoProfesor { get; set; }
     }
 }

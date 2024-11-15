@@ -27,5 +27,67 @@ namespace ProyectoMarjorie.forms
         {
 
         }
+
+        private void ActivateButtonUpdate()
+        {
+            if (tbName.Text != "" && tbCif.Text != "")
+            {
+                btnSaveChanges.Enabled = true;
+            }
+        }
+
+        private void dtpJustClass_ValueChanged(object sender, EventArgs e)
+        {
+            cbClass.Checked = true;
+        }
+
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+            ActivateButtonUpdate();
+        }
+
+        private void tbCif_TextChanged(object sender, EventArgs e)
+        {
+            ActivateButtonUpdate();
+        }
+
+        private void dtpBirthDate_ValueChanged(object sender, EventArgs e)
+        {
+            ActivateButtonUpdate();
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Los cambios han sido guardado con éxito.");
+            //agregar función para actualizar datos
+        }
+
+        private void ActivateAddClassBtn()
+        {
+            if (tbAddClassName.Text != "" && tbAddProfessorEmail.Text != "" && tbAddProfessorName.Text != "")
+            {
+                mepAddClassSchedule.ValidationButtonEnable = true;
+            }
+        }
+        private void tbAddClassName_TextChanged(object sender, EventArgs e)
+        {
+            ActivateAddClassBtn();
+        }
+
+        private void tbAddProfessorName_TextChanged(object sender, EventArgs e)
+        {
+            ActivateAddClassBtn();
+        }
+
+        private void tbAddProfessorEmail_TextChanged(object sender, EventArgs e)
+        {
+            ActivateAddClassBtn();
+        }
+
+        private void mepAddClassSchedule_SaveClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se ha agregado la clase al horario correctamente!");
+            //agregar función para agregar clase a horario
+        }
     }
 }

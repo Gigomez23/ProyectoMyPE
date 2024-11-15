@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProyectoMarjorie.models
 {
-    internal class Peticion
+    internal struct Peticion
     {
+        public int Id { get; set; }
         public DateTime Fecha {  get; set; }
         public Clase Clase { get; set; }
         public Estudiante Estudiante { get; set; }

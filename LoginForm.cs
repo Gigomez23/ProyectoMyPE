@@ -26,20 +26,7 @@ namespace ProyectoMarjorie
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (tbUsername.Text == "Admin" && tbPassword.Text == "Admin")
-            {
-                FormAdmin formAdmin = new FormAdmin();
-                formAdmin.ShowDialog();
-            }
-            else if (tbUsername.Text == "Usuario" && tbPassword.Text == "Usuario")
-            {
-                FormEstudiante formEstudiante = new FormEstudiante();
-                formEstudiante.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("El Nombre do Usuario o Contraseña no es correcto");
-            }
+            launchUserForm();
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -53,6 +40,24 @@ namespace ProyectoMarjorie
             if (tbUsername.Text != "")
             {
                 btnLogin.Enabled = true;
+            }
+        }
+
+        private void launchUserForm()
+        {
+            if (tbUsername.Text == "Admin" && tbPassword.Text == "Admin")
+            {
+                FormAdmin formAdmin = new FormAdmin();
+                formAdmin.ShowDialog();
+            }
+            else if (tbUsername.Text == "Usuario" && tbPassword.Text == "Usuario")
+            {
+                FormEstudiante formEstudiante = new FormEstudiante();
+                formEstudiante.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("El Nombre do Usuario o Contraseña no es correcto");
             }
         }
     }
