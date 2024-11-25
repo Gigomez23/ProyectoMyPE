@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoMarjorie.models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,10 @@ namespace ProyectoMarjorie
         [STAThread]
         static void Main()
         {
+            // Inicializar la base de datos
+            DatabaseHelper.InicializarBaseDeDatos();
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());

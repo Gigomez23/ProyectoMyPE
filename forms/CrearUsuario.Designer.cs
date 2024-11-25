@@ -55,6 +55,7 @@
             this.tbName.TabIndex = 0;
             this.tbName.Text = "";
             this.tbName.TrailingIcon = null;
+            this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // lblName
             // 
@@ -84,6 +85,7 @@
             this.tbCif.TabIndex = 2;
             this.tbCif.Text = "";
             this.tbCif.TrailingIcon = null;
+            this.tbCif.TextChanged += new System.EventHandler(this.tbCif_TextChanged);
             // 
             // lblCif
             // 
@@ -122,6 +124,7 @@
             this.btnAddUser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAddUser.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnAddUser.Depth = 0;
+            this.btnAddUser.Enabled = false;
             this.btnAddUser.HighEmphasis = true;
             this.btnAddUser.Icon = null;
             this.btnAddUser.Location = new System.Drawing.Point(347, 408);
@@ -131,10 +134,11 @@
             this.btnAddUser.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnAddUser.Size = new System.Drawing.Size(158, 36);
             this.btnAddUser.TabIndex = 6;
-            this.btnAddUser.Text = "Agregar Usuario";
+            this.btnAddUser.Text = "Crear Usuario";
             this.btnAddUser.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAddUser.UseAccentColor = false;
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // btnReturn
             // 

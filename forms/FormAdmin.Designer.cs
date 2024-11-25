@@ -207,7 +207,7 @@
             // mlblEmailPreview
             // 
             this.mlblEmailPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mlblEmailPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mlblEmailPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mlblEmailPreview.Depth = 0;
             this.mlblEmailPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mlblEmailPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -309,6 +309,7 @@
             // tbName
             // 
             this.tbName.AnimateReadOnly = false;
+            this.tbName.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbName.Depth = 0;
             this.tbName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);

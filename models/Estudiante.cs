@@ -1,12 +1,14 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProyectoMarjorie.models
 {
-    internal class Estudiante
+    public class Estudiante
     {
         public int Cif {  get; set; }
         public string Nombre { get; set; }
@@ -20,7 +22,17 @@ namespace ProyectoMarjorie.models
             Horario.Add(clase);
         }
 
-        //posible mejora, estructurar el horario para que se mueste en forma de tabla para visualizar de mejor manera el horario. 
+
+        public void EliminarClase(string nombreClase)
+        {
+            for (int i = 0; i < Horario.Count; i++)
+            {
+                if (nombreClase == Horario[i].Nombre)
+                {
+                    Horario.Remove(Horario[i]);
+                }
+            }
+        }
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoMarjorie.models
 {
-    internal struct Clase
+    public struct Clase
     {
         public string Nombre {  get; set; }
         public string NombreProfesor { get; set; }

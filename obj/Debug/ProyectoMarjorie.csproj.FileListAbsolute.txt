@@ -13,3 +13,13 @@ C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Fi
 C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.forms.CrearUsuario.resources
 C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.forms.FormAdmin.resources
 C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\obj\Debug\ProyectoMarjorie.forms.FormEstudiante.resources
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\EntityFramework.dll
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\System.Data.SQLite.dll
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\EntityFramework.xml
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\System.Data.SQLite.xml
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\Dapper.dll
+C:\Users\comgo\Desktop\College Work\Semestre II IV\Met. y prog. estr\Proyecto Final\ProyectoMarjorie\bin\Debug\Dapper.xml

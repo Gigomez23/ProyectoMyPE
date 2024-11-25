@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoMarjorie.models
 {
-    internal struct Peticion
+    public struct Peticion
     {
         public int Id { get; set; }
         public DateTime Fecha {  get; set; }
