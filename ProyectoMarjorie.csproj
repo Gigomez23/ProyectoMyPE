@@ -149,6 +149,7 @@
     <Content Include="resources\file-upload-stroke-rounded.png" />
     <Content Include="resources\task-01-stroke-rounded.png" />
     <Content Include="resources\user-stroke-rounded.png" />
+    <Content Include="resources\view-stroke-rounded.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="repositories\" />

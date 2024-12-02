@@ -109,5 +109,15 @@ namespace ProyectoMarjorie.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap view_stroke_rounded {
+            get {
+                object obj = ResourceManager.GetObject("view-stroke-rounded", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

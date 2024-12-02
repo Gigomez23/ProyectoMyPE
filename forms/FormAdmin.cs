@@ -249,12 +249,39 @@ namespace ProyectoMarjorie.forms
             {
                 dgvPetList.Columns.Add("PeticionId", "ID");
                 dgvPetList.Columns.Add("EstudianteNombre", "Estudiante");
-                dgvPetList.Columns.Add("ClaseNombre", "Clase");
+                //dgvPetList.Columns.Add("ClaseNombre", "Clase");
                 dgvPetList.Columns.Add("Fecha", "Fecha");
-                dgvPetList.Columns.Add("ProfesorNombre", "Profesor");
+                //dgvPetList.Columns.Add("ProfesorNombre", "Profesor");
             }
         }
 
+        private void dgvPetList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Validar que se haya seleccionado una fila válida
+            if (e.RowIndex >= 0 && e.RowIndex < dgvPetList.Rows.Count)
+            {
+                var row = dgvPetList.Rows[e.RowIndex];
+
+                // Asignar valores de la fila seleccionada a los TextBox
+                tbName.Text = row.Cells["EstudianteNombre"].Value?.ToString() ?? "";
+                //tbCif.Text = row.Cells["PeticionId"].Value?.ToString() ?? ""; // Ajusta según dónde guardes el CIF
+                tbDate.Text = row.Cells["Fecha"].Value?.ToString() ?? "";
+
+                // Aquí obtendremos las clases asociadas y las uniremos en un string
+                int peticionId = int.Parse(row.Cells["PeticionId"].Value?.ToString() ?? "0");
+                var peticion = DatabaseHelper.ObtenerPeticion(peticionId);
+
+                if (peticion != null && peticion.ClasesSeleccionadas != null)
+                {
+                    tbClass.Text = string.Join(", ", peticion.ClasesSeleccionadas.Select(c => c.Nombre));
+                    tbCif.Text = peticion.Estudiante.Cif.ToString();
+                }
+                else
+                {
+                    tbClass.Text = "No hay clases asociadas";
+                }
+            }
+        }
     }
 
 }

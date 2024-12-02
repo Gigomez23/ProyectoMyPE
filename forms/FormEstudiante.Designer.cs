@@ -35,7 +35,6 @@
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.lblTitleImg = new MaterialSkin.Controls.MaterialLabel();
-            this.picbImageSelected = new System.Windows.Forms.PictureBox();
             this.btnUploadImg = new MaterialSkin.Controls.MaterialButton();
             this.btnSearchImg = new MaterialSkin.Controls.MaterialButton();
             this.tbImgRoot = new MaterialSkin.Controls.MaterialTextBox();
@@ -84,11 +83,11 @@
             this.materialCheckbox11 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox12 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox13 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.picbImageSelected = new System.Windows.Forms.PictureBox();
             this.mtcMenu.SuspendLayout();
             this.SubirPet.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.materialCard6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbImageSelected)).BeginInit();
             this.materialCard5.SuspendLayout();
             this.mepChecklistJustification.SuspendLayout();
             this.EditDatPer.SuspendLayout();
@@ -99,6 +98,7 @@
             this.materialCard7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
             this.mepAddClassSchedule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbImageSelected)).BeginInit();
             this.SuspendLayout();
             // 
             // mtcMenu
@@ -181,15 +181,6 @@
             this.lblTitleImg.TabIndex = 6;
             this.lblTitleImg.Text = "Imagen";
             // 
-            // picbImageSelected
-            // 
-            this.picbImageSelected.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.picbImageSelected.Location = new System.Drawing.Point(14, 250);
-            this.picbImageSelected.Name = "picbImageSelected";
-            this.picbImageSelected.Size = new System.Drawing.Size(486, 447);
-            this.picbImageSelected.TabIndex = 3;
-            this.picbImageSelected.TabStop = false;
-            // 
             // btnUploadImg
             // 
             this.btnUploadImg.AutoSize = false;
@@ -237,7 +228,7 @@
             this.tbImgRoot.AnimateReadOnly = false;
             this.tbImgRoot.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbImgRoot.Depth = 0;
-            this.tbImgRoot.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbImgRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tbImgRoot.Hint = "Ruta de imagen:";
             this.tbImgRoot.LeadingIcon = null;
             this.tbImgRoot.Location = new System.Drawing.Point(17, 77);
@@ -489,7 +480,7 @@
             this.tbName.AnimateReadOnly = false;
             this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbName.Depth = 0;
-            this.tbName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tbName.LeadingIcon = null;
             this.tbName.Location = new System.Drawing.Point(194, 100);
             this.tbName.MaxLength = 50;
@@ -507,7 +498,7 @@
             this.tbCif.AnimateReadOnly = false;
             this.tbCif.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbCif.Depth = 0;
-            this.tbCif.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbCif.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tbCif.LeadingIcon = null;
             this.tbCif.Location = new System.Drawing.Point(194, 181);
             this.tbCif.MaxLength = 50;
@@ -969,6 +960,15 @@
             this.materialCheckbox13.Text = "materialCheckbox13";
             this.materialCheckbox13.UseVisualStyleBackColor = true;
             // 
+            // picbImageSelected
+            // 
+            this.picbImageSelected.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.picbImageSelected.Location = new System.Drawing.Point(14, 250);
+            this.picbImageSelected.Name = "picbImageSelected";
+            this.picbImageSelected.Size = new System.Drawing.Size(486, 447);
+            this.picbImageSelected.TabIndex = 3;
+            this.picbImageSelected.TabStop = false;
+            // 
             // FormEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -985,7 +985,6 @@
             this.SubirPet.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.materialCard6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picbImageSelected)).EndInit();
             this.materialCard5.ResumeLayout(false);
             this.materialCard5.PerformLayout();
             this.mepChecklistJustification.ResumeLayout(false);
@@ -1000,6 +999,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
             this.mepAddClassSchedule.ResumeLayout(false);
             this.mepAddClassSchedule.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbImageSelected)).EndInit();
             this.ResumeLayout(false);
 
         }

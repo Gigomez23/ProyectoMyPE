@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.tbUsername = new MaterialSkin.Controls.MaterialTextBox2();
             this.tbPassword = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnLogin = new MaterialSkin.Controls.MaterialButton();
             this.btnAddUser = new MaterialSkin.Controls.MaterialButton();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pbUser = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +69,7 @@
             this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbUsername.TrailingIcon = null;
             this.tbUsername.UseSystemPasswordChar = false;
+            this.tbUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUsername_KeyPress);
             this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
             // 
             // tbPassword
@@ -98,6 +102,8 @@
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbPassword.TrailingIcon = null;
             this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPassword_KeyPress);
+            this.tbPassword.MouseHover += new System.EventHandler(this.tbPassword_MouseHover);
             this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // btnLogin
@@ -142,6 +148,17 @@
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "document-validation-stroke-rounded.png");
+            this.imageList1.Images.SetKeyName(1, "edit-user-02-stroke-rounded.png");
+            this.imageList1.Images.SetKeyName(2, "file-upload-stroke-rounded.png");
+            this.imageList1.Images.SetKeyName(3, "task-01-stroke-rounded.png");
+            this.imageList1.Images.SetKeyName(4, "user-stroke-rounded.png");
+            this.imageList1.Images.SetKeyName(5, "view-stroke-rounded.png");
+            // 
             // pbUser
             // 
             this.pbUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -182,6 +199,7 @@
         private MaterialSkin.Controls.MaterialButton btnLogin;
         private MaterialSkin.Controls.MaterialButton btnAddUser;
         private System.Windows.Forms.PictureBox pbUser;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

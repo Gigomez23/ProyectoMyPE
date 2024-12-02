@@ -92,5 +92,34 @@ namespace ProyectoMarjorie
                 btnLogin.Enabled = false;
             }
         }
+
+        private void tbUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es Enter
+            if (e.KeyChar == (char)13) // 13 es el código ASCII de Enter
+            {
+                if (tbUsername.Text != "" && tbPassword.Text != "")
+                {
+                    launchUserForm();
+                }
+            }
+        }
+
+        private void tbPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es Enter
+            if (e.KeyChar == (char)13) // 13 es el código ASCII de Enter
+            {
+                if (tbUsername.Text != "" && tbPassword.Text != "")
+                {
+                    launchUserForm();
+                }
+            }
+        }
+
+        private void tbPassword_MouseHover(object sender, EventArgs e)
+        {
+            tbPassword.UseSystemPasswordChar = false;
+        }
     }
 }

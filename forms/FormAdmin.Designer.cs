@@ -89,6 +89,8 @@
             this.lblSelectClass = new MaterialSkin.Controls.MaterialLabel();
             this.materialCheckedListBox1 = new MaterialSkin.Controls.MaterialCheckedListBox();
             this.tbCifEntry = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.lbPetList = new MaterialSkin.Controls.MaterialLabel();
             this.mtcMenu.SuspendLayout();
             this.ConfirmJust.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).BeginInit();
@@ -102,6 +104,7 @@
             this.mepCreateUser.SuspendLayout();
             this.mepFindStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
+            this.materialCard3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImagenesDeMenu
@@ -113,6 +116,7 @@
             this.ImagenesDeMenu.Images.SetKeyName(2, "SubirArchivo.png");
             this.ImagenesDeMenu.Images.SetKeyName(3, "Documento.png");
             this.ImagenesDeMenu.Images.SetKeyName(4, "Usuario.png");
+            this.ImagenesDeMenu.Images.SetKeyName(5, "view-stroke-rounded.png");
             // 
             // mtcMenu
             // 
@@ -133,7 +137,7 @@
             // 
             // ConfirmJust
             // 
-            this.ConfirmJust.Controls.Add(this.dgvPetList);
+            this.ConfirmJust.Controls.Add(this.materialCard3);
             this.ConfirmJust.Controls.Add(this.mepJustDetails);
             this.ConfirmJust.Controls.Add(this.mepRejectedPet);
             this.ConfirmJust.ImageKey = "Aprobar.png";
@@ -150,10 +154,11 @@
             // 
             this.dgvPetList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPetList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPetList.Location = new System.Drawing.Point(29, 69);
+            this.dgvPetList.Location = new System.Drawing.Point(17, 80);
             this.dgvPetList.Name = "dgvPetList";
-            this.dgvPetList.Size = new System.Drawing.Size(590, 675);
+            this.dgvPetList.Size = new System.Drawing.Size(561, 591);
             this.dgvPetList.TabIndex = 3;
+            this.dgvPetList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPetList_CellClick);
             // 
             // mepJustDetails
             // 
@@ -171,15 +176,15 @@
             this.mepJustDetails.Controls.Add(this.lblName);
             this.mepJustDetails.Depth = 0;
             this.mepJustDetails.Description = "Detalles de petición de justificación de estudiante.";
-            this.mepJustDetails.ExpandHeight = 675;
+            this.mepJustDetails.ExpandHeight = 721;
             this.mepJustDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mepJustDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mepJustDetails.Location = new System.Drawing.Point(664, 69);
+            this.mepJustDetails.Location = new System.Drawing.Point(664, 30);
             this.mepJustDetails.Margin = new System.Windows.Forms.Padding(16);
             this.mepJustDetails.MouseState = MaterialSkin.MouseState.HOVER;
             this.mepJustDetails.Name = "mepJustDetails";
             this.mepJustDetails.Padding = new System.Windows.Forms.Padding(24, 64, 24, 16);
-            this.mepJustDetails.Size = new System.Drawing.Size(703, 675);
+            this.mepJustDetails.Size = new System.Drawing.Size(703, 721);
             this.mepJustDetails.TabIndex = 1;
             this.mepJustDetails.Title = "Detalles";
             this.mepJustDetails.ValidationButtonEnable = true;
@@ -336,10 +341,10 @@
             this.mepRejectedPet.Controls.Add(this.materialLabel4);
             this.mepRejectedPet.Depth = 0;
             this.mepRejectedPet.Description = "Especifique por que no es valida la justificación.";
-            this.mepRejectedPet.ExpandHeight = 695;
+            this.mepRejectedPet.ExpandHeight = 656;
             this.mepRejectedPet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mepRejectedPet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mepRejectedPet.Location = new System.Drawing.Point(664, 139);
+            this.mepRejectedPet.Location = new System.Drawing.Point(664, 95);
             this.mepRejectedPet.Margin = new System.Windows.Forms.Padding(16, 1, 16, 0);
             this.mepRejectedPet.MouseState = MaterialSkin.MouseState.HOVER;
             this.mepRejectedPet.Name = "mepRejectedPet";
@@ -354,11 +359,11 @@
             // mltbReasonForRejection
             // 
             this.mltbReasonForRejection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mltbReasonForRejection.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mltbReasonForRejection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mltbReasonForRejection.Depth = 0;
             this.mltbReasonForRejection.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mltbReasonForRejection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mltbReasonForRejection.Location = new System.Drawing.Point(69, 434);
+            this.mltbReasonForRejection.Location = new System.Drawing.Point(69, 390);
             this.mltbReasonForRejection.MouseState = MaterialSkin.MouseState.HOVER;
             this.mltbReasonForRejection.Name = "mltbReasonForRejection";
             this.mltbReasonForRejection.Size = new System.Drawing.Size(561, 178);
@@ -1151,6 +1156,34 @@
             this.tbCifEntry.TrailingIcon = null;
             this.tbCifEntry.UseSystemPasswordChar = false;
             // 
+            // materialCard3
+            // 
+            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.lbPetList);
+            this.materialCard3.Controls.Add(this.dgvPetList);
+            this.materialCard3.Depth = 0;
+            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard3.Location = new System.Drawing.Point(17, 30);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard3.Name = "materialCard3";
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard3.Size = new System.Drawing.Size(595, 721);
+            this.materialCard3.TabIndex = 4;
+            // 
+            // lbPetList
+            // 
+            this.lbPetList.Depth = 0;
+            this.lbPetList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbPetList.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbPetList.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lbPetList.Location = new System.Drawing.Point(14, 14);
+            this.lbPetList.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbPetList.Name = "lbPetList";
+            this.lbPetList.Size = new System.Drawing.Size(567, 31);
+            this.lbPetList.TabIndex = 8;
+            this.lbPetList.Text = "Peticiones de Estudiantes:";
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1185,6 +1218,7 @@
             this.mepFindStudent.ResumeLayout(false);
             this.mepFindStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
+            this.materialCard3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1249,5 +1283,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialLabel lblStudenInfo;
+        private MaterialSkin.Controls.MaterialCard materialCard3;
+        private MaterialSkin.Controls.MaterialLabel lbPetList;
     }
 }

@@ -653,6 +653,5 @@ CREATE TABLE IF NOT EXISTS Usuarios (
             }
         }
 
-
     }
 }
