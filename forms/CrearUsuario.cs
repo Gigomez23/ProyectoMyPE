@@ -31,9 +31,10 @@ namespace ProyectoMarjorie.forms
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            string nombre = tbName.Text;  // Asumiendo que tbName es el TextBox donde se ingresa el nombre
-            string cif = tbCif.Text;        // Asumiendo que tbCif es el TextBox donde se ingresa el CIF
-            DateTime fechaNacimiento = dtpBirthDate.Value;  // Asumiendo que dtpFechaNacimiento es el DateTimePicker
+            string nombre = tbName.Text;  
+            string cif = tbCif.Text;        
+            DateTime fechaNacimiento = dtpBirthDate.Value;  
+            string contrasena = tbPassword.Text;
 
             // Verificar si ya existe un estudiante con ese CIF
             if (DatabaseHelper.ObtenerEstudiantePorCif(cif) != null)
@@ -43,12 +44,22 @@ namespace ProyectoMarjorie.forms
             }
 
             // Agregar el estudiante a la base de datos
-            bool resultado = DatabaseHelper.AgregarEstudiante(nombre, cif, fechaNacimiento);
+            bool resultadoEstudiante = DatabaseHelper.AgregarEstudiante(nombre, cif, fechaNacimiento);
 
-            if (resultado)
+            if (resultadoEstudiante)
             {
-                MessageBox.Show("Estudiante agregado correctamente.");
-                this.Close();  // Cerrar el formulario si el estudiante fue agregado
+                // Crear el usuario de sistema
+                bool resultadoUsuario = DatabaseHelper.AgregarUsuario(cif, contrasena, cif);
+
+                if (resultadoUsuario)
+                {
+                    MessageBox.Show("Estudiante y usuario agregado correctamente.");
+                    this.Close();  // Cerrar el formulario si el estudiante y usuario fueron agregados
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al agregar el usuario.");
+                }
             }
             else
             {

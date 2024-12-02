@@ -28,36 +28,44 @@ namespace ProyectoMarjorie.models
 
                 // Crear las tablas
                 string sql = @"
-        CREATE TABLE IF NOT EXISTS Estudiantes (
-            Cif INTEGER PRIMARY KEY,
-            Nombre TEXT NOT NULL,
-            FechaNacimiento TEXT NOT NULL
-        );
+    CREATE TABLE IF NOT EXISTS Estudiantes (
+        Cif INTEGER PRIMARY KEY,
+        Nombre TEXT NOT NULL,
+        FechaNacimiento TEXT NOT NULL
+    );
 
-        CREATE TABLE IF NOT EXISTS Clases (
-            IdClase INTEGER PRIMARY KEY AUTOINCREMENT,
-            Nombre TEXT NOT NULL,
-            NombreProfesor TEXT,
-            CorreoProfesor TEXT
-        );
+    CREATE TABLE IF NOT EXISTS Clases (
+        IdClase INTEGER PRIMARY KEY AUTOINCREMENT,
+        Nombre TEXT NOT NULL,
+        NombreProfesor TEXT,
+        CorreoProfesor TEXT
+    );
 
-        CREATE TABLE IF NOT EXISTS Peticiones (
-            IdPeticion INTEGER PRIMARY KEY AUTOINCREMENT,
-            Fecha TEXT NOT NULL,
-            IdClase INTEGER NOT NULL,
-            CifEstudiante INTEGER NOT NULL,
-            FOREIGN KEY (IdClase) REFERENCES Clases(IdClase),
-            FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif)
-        );
+    CREATE TABLE IF NOT EXISTS Peticiones (
+        IdPeticion INTEGER PRIMARY KEY AUTOINCREMENT,
+        Fecha TEXT NOT NULL,
+        IdClase INTEGER NOT NULL,
+        CifEstudiante INTEGER NOT NULL,
+        FOREIGN KEY (IdClase) REFERENCES Clases(IdClase),
+        FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif)
+    );
 
-        CREATE TABLE IF NOT EXISTS Estudiantes_Clases (
-            CifEstudiante INTEGER NOT NULL,
-            IdClase INTEGER NOT NULL,
-            PRIMARY KEY (CifEstudiante, IdClase),
-            FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif),
-            FOREIGN KEY (IdClase) REFERENCES Clases(IdClase)
-        );
-        ";
+    CREATE TABLE IF NOT EXISTS Estudiantes_Clases (
+        CifEstudiante INTEGER NOT NULL,
+        IdClase INTEGER NOT NULL,
+        PRIMARY KEY (CifEstudiante, IdClase),
+        FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif),
+        FOREIGN KEY (IdClase) REFERENCES Clases(IdClase)
+    );
+
+    CREATE TABLE IF NOT EXISTS Usuarios (
+        nombreUsuario TEXT PRIMARY KEY,
+        contrasena TEXT NOT NULL,
+        CifEstudiante INTEGER NOT NULL,
+        FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif)
+    );
+";
+
 
                 using (var cmd = new SQLiteCommand(sql, conexion))
                 {
@@ -65,6 +73,87 @@ namespace ProyectoMarjorie.models
                     Console.WriteLine("Tablas creadas o ya existentes.");
                 }
             }
+        }
+
+
+        public static bool AgregarUsuario(string nombreUsuario, string contrasena, string cifEstudiante)
+        {
+            using (var conexion = new SQLiteConnection(DatabasePath))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    // Validar que el estudiante existe
+                    string validarEstudiante = "SELECT Cif FROM Estudiantes WHERE Cif = @Cif";
+                    using (var cmd = new SQLiteCommand(validarEstudiante, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@Cif", cifEstudiante);
+                        var result = cmd.ExecuteScalar();
+                        if (result == null)
+                        {
+                            MessageBox.Show("El estudiante no existe.");
+                            return false;
+                        }
+                    }
+
+                    // Insertar en la tabla Usuarios
+                    string query = "INSERT INTO Usuarios (nombreUsuario, contrasena, CifEstudiante) VALUES (@nombreUsuario, @contrasena, @CifEstudiante)";
+                    using (var cmd = new SQLiteCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+                        cmd.Parameters.AddWithValue("@contrasena", contrasena);
+                        cmd.Parameters.AddWithValue("@CifEstudiante", cifEstudiante);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    return true; // Usuario agregado exitosamente
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al agregar el usuario: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+        public static Usuario AutenticarUsuario(string nombreUsuario, string contrasena)
+        {
+            using (var conexion = new SQLiteConnection(DatabasePath))
+            {
+                conexion.Open();
+
+                string query = @"
+            SELECT Usuarios.nombreUsuario, Usuarios.contrasena, Estudiantes.Cif, Estudiantes.Nombre, Estudiantes.FechaNacimiento
+            FROM Usuarios
+            INNER JOIN Estudiantes ON Usuarios.CifEstudiante = Estudiantes.Cif
+            WHERE Usuarios.nombreUsuario = @nombreUsuario AND Usuarios.contrasena = @contrasena";
+
+                using (var cmd = new SQLiteCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+                    cmd.Parameters.AddWithValue("@contrasena", contrasena);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Usuario
+                            {
+                                nombreUsuario = reader.GetString(0),
+                                contrasena = reader.GetString(1),
+                                Estudiante = new Estudiante
+                                {
+                                    Cif = reader.GetInt32(2),
+                                    Nombre = reader.GetString(3),
+                                    FechaNacimiento = DateTime.Parse(reader.GetString(4))
+                                }
+                            };
+                        }
+                    }
+                }
+            }
+            return null; // Retorna null explícitamente si no se encuentran credenciales válidas
         }
 
 

@@ -104,6 +104,7 @@
     <Compile Include="models\Clase.cs" />
     <Compile Include="models\Estudiante.cs" />
     <Compile Include="models\Peticion.cs" />
+    <Compile Include="models\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\CrearUsuario.resx">

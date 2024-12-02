@@ -43,25 +43,32 @@ namespace ProyectoMarjorie
 
         private void launchUserForm()
         {
-            string cifEstudiante = tbUsername.Text;
+            string nombreUsuario = tbUsername.Text;
+            string contrasena = tbPassword.Text;
 
-            // Buscar el estudiante en la base de datos con el CIF ingresado
-            Estudiante estudiante = DatabaseHelper.ObtenerEstudiantePorCif(cifEstudiante);
-
-            if (tbUsername.Text == "Admin" && tbPassword.Text == "Admin")
+            // Si el usuario es "Admin" y la contraseña es "Admin", ir al formulario de administración
+            if (nombreUsuario == "Admin" && contrasena == "Admin")
             {
                 FormAdmin formAdmin = new FormAdmin();
                 formAdmin.ShowDialog();
+                return;
             }
-            else if (estudiante != null && tbPassword.Text == "Usuario")
+
+            // Autenticar al usuario en la base de datos
+            Usuario usuario = DatabaseHelper.AutenticarUsuario(nombreUsuario, contrasena);
+
+            if (usuario != null)
             {
-                FormEstudiante formEstudiante = new FormEstudiante(estudiante);
+                // Si la autenticación es exitosa, abrir el formulario de estudiante con los datos del estudiante asociado
+                FormEstudiante formEstudiante = new FormEstudiante(usuario.Estudiante);
                 formEstudiante.ShowDialog();
             }
             else
             {
-                MessageBox.Show("El Nombre do Usuario o Contraseña no es correcto");
+                // Mostrar un mensaje de error si la autenticación falla
+                MessageBox.Show("El Nombre de Usuario o Contraseña no es correcto");
             }
+
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

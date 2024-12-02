@@ -36,7 +36,8 @@
             this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.btnAddUser = new MaterialSkin.Controls.MaterialButton();
             this.btnReturn = new MaterialSkin.Controls.MaterialButton();
-            this.fabAddClass = new MaterialSkin.Controls.MaterialFloatingActionButton();
+            this.lblPassword = new MaterialSkin.Controls.MaterialLabel();
+            this.tbPassword = new MaterialSkin.Controls.MaterialTextBox2();
             this.SuspendLayout();
             // 
             // tbName
@@ -76,7 +77,7 @@
             this.tbCif.Depth = 0;
             this.tbCif.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tbCif.LeadingIcon = null;
-            this.tbCif.Location = new System.Drawing.Point(236, 212);
+            this.tbCif.Location = new System.Drawing.Point(236, 295);
             this.tbCif.MaxLength = 50;
             this.tbCif.MouseState = MaterialSkin.MouseState.OUT;
             this.tbCif.Multiline = false;
@@ -92,7 +93,7 @@
             this.lblCif.AutoSize = true;
             this.lblCif.Depth = 0;
             this.lblCif.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblCif.Location = new System.Drawing.Point(177, 228);
+            this.lblCif.Location = new System.Drawing.Point(177, 311);
             this.lblCif.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCif.Name = "lblCif";
             this.lblCif.Size = new System.Drawing.Size(28, 19);
@@ -104,7 +105,7 @@
             this.lblBirthDate.AutoSize = true;
             this.lblBirthDate.Depth = 0;
             this.lblBirthDate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblBirthDate.Location = new System.Drawing.Point(72, 306);
+            this.lblBirthDate.Location = new System.Drawing.Point(72, 389);
             this.lblBirthDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblBirthDate.Name = "lblBirthDate";
             this.lblBirthDate.Size = new System.Drawing.Size(133, 19);
@@ -113,7 +114,7 @@
             // 
             // dtpBirthDate
             // 
-            this.dtpBirthDate.Location = new System.Drawing.Point(236, 306);
+            this.dtpBirthDate.Location = new System.Drawing.Point(236, 389);
             this.dtpBirthDate.Name = "dtpBirthDate";
             this.dtpBirthDate.Size = new System.Drawing.Size(228, 20);
             this.dtpBirthDate.TabIndex = 5;
@@ -127,7 +128,7 @@
             this.btnAddUser.Enabled = false;
             this.btnAddUser.HighEmphasis = true;
             this.btnAddUser.Icon = null;
-            this.btnAddUser.Location = new System.Drawing.Point(347, 408);
+            this.btnAddUser.Location = new System.Drawing.Point(347, 485);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAddUser.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddUser.Name = "btnAddUser";
@@ -149,7 +150,7 @@
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnReturn.HighEmphasis = true;
             this.btnReturn.Icon = null;
-            this.btnReturn.Location = new System.Drawing.Point(75, 408);
+            this.btnReturn.Location = new System.Drawing.Point(75, 485);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnReturn.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnReturn.Name = "btnReturn";
@@ -161,19 +162,47 @@
             this.btnReturn.UseAccentColor = false;
             this.btnReturn.UseVisualStyleBackColor = true;
             // 
-            // fabAddClass
+            // lblPassword
             // 
-            this.fabAddClass.AnimateShowHideButton = true;
-            this.fabAddClass.BackColor = System.Drawing.SystemColors.Control;
-            this.fabAddClass.Depth = 0;
-            this.fabAddClass.Icon = null;
-            this.fabAddClass.Location = new System.Drawing.Point(493, 517);
-            this.fabAddClass.MouseState = MaterialSkin.MouseState.HOVER;
-            this.fabAddClass.Name = "fabAddClass";
-            this.fabAddClass.Size = new System.Drawing.Size(56, 56);
-            this.fabAddClass.TabIndex = 8;
-            this.fabAddClass.Text = "Agregar Clase a Horario";
-            this.fabAddClass.UseVisualStyleBackColor = false;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Depth = 0;
+            this.lblPassword.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblPassword.Location = new System.Drawing.Point(119, 230);
+            this.lblPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(86, 19);
+            this.lblPassword.TabIndex = 9;
+            this.lblPassword.Text = "Contraseña:";
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.AnimateReadOnly = false;
+            this.tbPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tbPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tbPassword.Depth = 0;
+            this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbPassword.HideSelection = true;
+            this.tbPassword.LeadingIcon = null;
+            this.tbPassword.LeaveOnEnterKey = true;
+            this.tbPassword.Location = new System.Drawing.Point(236, 210);
+            this.tbPassword.MaxLength = 32767;
+            this.tbPassword.MouseState = MaterialSkin.MouseState.OUT;
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '●';
+            this.tbPassword.PrefixSuffixText = null;
+            this.tbPassword.ReadOnly = false;
+            this.tbPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbPassword.SelectedText = "";
+            this.tbPassword.SelectionLength = 0;
+            this.tbPassword.SelectionStart = 0;
+            this.tbPassword.ShortcutsEnabled = true;
+            this.tbPassword.Size = new System.Drawing.Size(269, 48);
+            this.tbPassword.TabIndex = 10;
+            this.tbPassword.TabStop = false;
+            this.tbPassword.Tag = "";
+            this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbPassword.TrailingIcon = null;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // CrearUsuario
             // 
@@ -181,8 +210,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnReturn;
-            this.ClientSize = new System.Drawing.Size(586, 597);
-            this.Controls.Add(this.fabAddClass);
+            this.ClientSize = new System.Drawing.Size(586, 657);
+            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.dtpBirthDate);
@@ -212,6 +242,7 @@
         private System.Windows.Forms.DateTimePicker dtpBirthDate;
         private MaterialSkin.Controls.MaterialButton btnAddUser;
         private MaterialSkin.Controls.MaterialButton btnReturn;
-        private MaterialSkin.Controls.MaterialFloatingActionButton fabAddClass;
+        private MaterialSkin.Controls.MaterialLabel lblPassword;
+        private MaterialSkin.Controls.MaterialTextBox2 tbPassword;
     }
 }
