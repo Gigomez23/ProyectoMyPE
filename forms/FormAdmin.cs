@@ -11,7 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
 using ProyectoMarjorie.database;
+using System.IO;
 
 namespace ProyectoMarjorie.forms
 {
@@ -280,6 +283,83 @@ namespace ProyectoMarjorie.forms
                 {
                     tbClass.Text = "No hay clases asociadas";
                 }
+
+                // Propagar datos al MaterialMultiLineTextBox (mlblEmailPreview)
+                string nombreEstudiante = tbName.Text;
+                string fecha = tbDate.Text;
+
+                mlblEmailPreview.Text = $@"Buenos días estimados docentes y coordinadores:
+
+                    Agradeceremos el apoyo justificando la inasistencia del estudiante {nombreEstudiante}, quien faltó a clases desde el {fecha} por motivos de salud. Cabe señalar que esta inasistencia se suma al 20% que el estudiante tiene para ser justificado, si se llega a sobrepasar este 20% pierde el derecho a realizar examen final del curso.
+
+                    {nombreEstudiante} se compromete a ponerse al día con las tareas y clases pendientes. Aprovechamos el presente para solicitar el apoyo con recibir tareas o trabajos pendientes de manera tardía.";
+            }
+        }
+
+        private void mepJustDetails_SaveClick(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtener el ID de la petición seleccionada
+                if (dgvPetList.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Por favor, selecciona una petición.");
+                    return;
+                }
+
+                int idPeticion = Convert.ToInt32(dgvPetList.SelectedRows[0].Cells["PeticionId"].Value);
+
+                // Obtener los correos asociados a la petición
+                var correos = DatabaseHelper.ObtenerCorreosProfesoresPorPeticion(idPeticion);
+
+                if (correos.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron correos para las clases asociadas a esta petición.");
+                    return;
+                }
+
+                // Configuración de Gmail
+                var smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("admin_email@gmail.com", "admin_password"),
+                    EnableSsl = true,
+                };
+
+                // Crear el mensaje
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress("admin_email@gmail.com"),
+                    Subject = "Justificación de inasistencia",
+                    Body = mlblEmailPreview.Text,
+                    IsBodyHtml = false,
+                };
+
+                // Agregar destinatarios
+                foreach (var correo in correos)
+                {
+                    mailMessage.To.Add(correo);
+                }
+
+                // Adjuntar imagen de justificación
+                var peticion = DatabaseHelper.ObtenerPeticion(idPeticion);
+                if (peticion.Imagen != null && peticion.Imagen.Length > 0)
+                {
+                    using (var stream = new MemoryStream(peticion.Imagen))
+                    {
+                        var attachment = new Attachment(stream, "justificacion.jpg", "image/jpeg");
+                        mailMessage.Attachments.Add(attachment);
+                    }
+                }
+
+                // Enviar el correo
+                smtpClient.Send(mailMessage);
+
+                MessageBox.Show("El correo fue enviado exitosamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al enviar el correo: {ex.Message}");
             }
         }
     }

@@ -653,5 +653,37 @@ CREATE TABLE IF NOT EXISTS Usuarios (
             }
         }
 
+        public static List<string> ObtenerCorreosProfesoresPorPeticion(int idPeticion)
+        {
+            List<string> correos = new List<string>();
+
+            using (var conexion = new SQLiteConnection(DatabasePath))
+            {
+                conexion.Open();
+
+                string query = @"
+            SELECT c.CorreoProfesor
+            FROM Clases c
+            INNER JOIN ClasesPeticiones cp ON cp.IdClase = c.IdClase
+            WHERE cp.IdPeticion = @IdPeticion";
+
+                using (var cmd = new SQLiteCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@IdPeticion", idPeticion);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            correos.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+
+            return correos;
+        }
+
+
     }
 }

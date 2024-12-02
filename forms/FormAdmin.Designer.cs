@@ -33,6 +33,8 @@
             this.ImagenesDeMenu = new System.Windows.Forms.ImageList(this.components);
             this.mtcMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.ConfirmJust = new System.Windows.Forms.TabPage();
+            this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.lbPetList = new MaterialSkin.Controls.MaterialLabel();
             this.dgvPetList = new System.Windows.Forms.DataGridView();
             this.mepJustDetails = new MaterialSkin.Controls.MaterialExpansionPanel();
             this.mlblEmailPreview = new MaterialSkin.Controls.MaterialMultiLineTextBox();
@@ -83,16 +85,12 @@
             this.tbStudentName = new MaterialSkin.Controls.MaterialTextBox2();
             this.mepFindStudent = new MaterialSkin.Controls.MaterialExpansionPanel();
             this.dgvStudentList = new System.Windows.Forms.DataGridView();
-            this.CifLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSelectClass = new MaterialSkin.Controls.MaterialLabel();
             this.materialCheckedListBox1 = new MaterialSkin.Controls.MaterialCheckedListBox();
             this.tbCifEntry = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            this.lbPetList = new MaterialSkin.Controls.MaterialLabel();
             this.mtcMenu.SuspendLayout();
             this.ConfirmJust.SuspendLayout();
+            this.materialCard3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).BeginInit();
             this.mepJustDetails.SuspendLayout();
             this.mepRejectedPet.SuspendLayout();
@@ -104,7 +102,6 @@
             this.mepCreateUser.SuspendLayout();
             this.mepFindStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
-            this.materialCard3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImagenesDeMenu
@@ -150,6 +147,34 @@
             this.ConfirmJust.ToolTipText = "Confirmar Justificaciónes de estudiantes.";
             this.ConfirmJust.UseVisualStyleBackColor = true;
             // 
+            // materialCard3
+            // 
+            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.lbPetList);
+            this.materialCard3.Controls.Add(this.dgvPetList);
+            this.materialCard3.Depth = 0;
+            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard3.Location = new System.Drawing.Point(17, 30);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard3.Name = "materialCard3";
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard3.Size = new System.Drawing.Size(595, 721);
+            this.materialCard3.TabIndex = 4;
+            // 
+            // lbPetList
+            // 
+            this.lbPetList.Depth = 0;
+            this.lbPetList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbPetList.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbPetList.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lbPetList.Location = new System.Drawing.Point(14, 14);
+            this.lbPetList.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbPetList.Name = "lbPetList";
+            this.lbPetList.Size = new System.Drawing.Size(567, 31);
+            this.lbPetList.TabIndex = 8;
+            this.lbPetList.Text = "Peticiones de Estudiantes:";
+            // 
             // dgvPetList
             // 
             this.dgvPetList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -189,6 +214,7 @@
             this.mepJustDetails.Title = "Detalles";
             this.mepJustDetails.ValidationButtonEnable = true;
             this.mepJustDetails.ValidationButtonText = "Aprobar";
+            this.mepJustDetails.SaveClick += new System.EventHandler(this.mepJustDetails_SaveClick);
             this.mepJustDetails.CancelClick += new System.EventHandler(this.mepJustDetails_CancelClick);
             // 
             // mlblEmailPreview
@@ -203,7 +229,7 @@
             this.mlblEmailPreview.Name = "mlblEmailPreview";
             this.mlblEmailPreview.Size = new System.Drawing.Size(561, 178);
             this.mlblEmailPreview.TabIndex = 10;
-            this.mlblEmailPreview.Text = resources.GetString("mlblEmailPreview.Text");
+            this.mlblEmailPreview.Text = "";
             // 
             // tbDate
             // 
@@ -931,7 +957,7 @@
             this.mepCreateUser.Depth = 0;
             this.mepCreateUser.Description = "Crear usuario para el estudiante";
             this.mepCreateUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.mepCreateUser.ExpandHeight = 533;
+            this.mepCreateUser.ExpandHeight = 557;
             this.mepCreateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mepCreateUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mepCreateUser.Location = new System.Drawing.Point(3, 51);
@@ -1059,7 +1085,7 @@
             this.mepFindStudent.Depth = 0;
             this.mepFindStudent.Description = "Buscar estudiante mediante Cif en la base de datos.";
             this.mepFindStudent.Dock = System.Windows.Forms.DockStyle.Top;
-            this.mepFindStudent.ExpandHeight = 545;
+            this.mepFindStudent.ExpandHeight = 569;
             this.mepFindStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mepFindStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mepFindStudent.Location = new System.Drawing.Point(3, 3);
@@ -1075,30 +1101,12 @@
             // 
             // dgvStudentList
             // 
+            this.dgvStudentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CifLista,
-            this.Nombre,
-            this.correo});
             this.dgvStudentList.Location = new System.Drawing.Point(79, 181);
             this.dgvStudentList.Name = "dgvStudentList";
             this.dgvStudentList.Size = new System.Drawing.Size(434, 260);
             this.dgvStudentList.TabIndex = 9;
-            // 
-            // CifLista
-            // 
-            this.CifLista.HeaderText = "Cif";
-            this.CifLista.Name = "CifLista";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // correo
-            // 
-            this.correo.HeaderText = "Correo";
-            this.correo.Name = "correo";
             // 
             // lblSelectClass
             // 
@@ -1156,34 +1164,6 @@
             this.tbCifEntry.TrailingIcon = null;
             this.tbCifEntry.UseSystemPasswordChar = false;
             // 
-            // materialCard3
-            // 
-            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard3.Controls.Add(this.lbPetList);
-            this.materialCard3.Controls.Add(this.dgvPetList);
-            this.materialCard3.Depth = 0;
-            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(17, 30);
-            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard3.Size = new System.Drawing.Size(595, 721);
-            this.materialCard3.TabIndex = 4;
-            // 
-            // lbPetList
-            // 
-            this.lbPetList.Depth = 0;
-            this.lbPetList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbPetList.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lbPetList.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lbPetList.Location = new System.Drawing.Point(14, 14);
-            this.lbPetList.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbPetList.Name = "lbPetList";
-            this.lbPetList.Size = new System.Drawing.Size(567, 31);
-            this.lbPetList.TabIndex = 8;
-            this.lbPetList.Text = "Peticiones de Estudiantes:";
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1199,6 +1179,7 @@
             this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.mtcMenu.ResumeLayout(false);
             this.ConfirmJust.ResumeLayout(false);
+            this.materialCard3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).EndInit();
             this.mepJustDetails.ResumeLayout(false);
             this.mepJustDetails.PerformLayout();
@@ -1218,7 +1199,6 @@
             this.mepFindStudent.ResumeLayout(false);
             this.mepFindStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
-            this.materialCard3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1278,9 +1258,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.DataGridView dgvPetList;
         private System.Windows.Forms.DataGridView dgvStudentList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CifLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialLabel lblStudenInfo;
         private MaterialSkin.Controls.MaterialCard materialCard3;
