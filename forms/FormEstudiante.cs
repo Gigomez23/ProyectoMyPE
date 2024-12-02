@@ -314,5 +314,33 @@ namespace ProyectoMarjorie.forms
             cbFecha.Checked = false;
             cbUploadImg.Checked = false;
         }
+
+        private void checkedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            cbFecha.Checked = true;
+        }
+
+        private void checkJust()
+        {
+            if (cbFecha.Checked == true && cbClass.Checked == true && cbUploadImg.Checked == true)
+            {
+                mepChecklistJustification.ValidationButtonEnable = true;
+            }
+        }
+
+        private void cbFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            checkJust();
+        }
+
+        private void cbClass_CheckedChanged(object sender, EventArgs e)
+        {
+            checkJust();
+        }
+
+        private void cbUploadImg_CheckedChanged(object sender, EventArgs e)
+        {
+            checkJust();
+        }
     }
 }

@@ -33,10 +33,20 @@
             this.mtcMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.SubirPet = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
+            this.lblTitleImg = new MaterialSkin.Controls.MaterialLabel();
+            this.picbImageSelected = new System.Windows.Forms.PictureBox();
+            this.btnUploadImg = new MaterialSkin.Controls.MaterialButton();
+            this.btnSearchImg = new MaterialSkin.Controls.MaterialButton();
+            this.tbImgRoot = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
+            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.lblTitleDateClass = new MaterialSkin.Controls.MaterialLabel();
             this.dtpJustClass = new System.Windows.Forms.DateTimePicker();
-            this.lblSelectClass = new MaterialSkin.Controls.MaterialLabel();
             this.lblDate = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSelectClass = new MaterialSkin.Controls.MaterialLabel();
             this.mepChecklistJustification = new MaterialSkin.Controls.MaterialExpansionPanel();
+            this.cbUploadImg = new MaterialSkin.Controls.MaterialCheckbox();
             this.cbClass = new MaterialSkin.Controls.MaterialCheckbox();
             this.cbFecha = new MaterialSkin.Controls.MaterialCheckbox();
             this.EditDatPer = new System.Windows.Forms.TabPage();
@@ -52,8 +62,10 @@
             this.lblCif = new MaterialSkin.Controls.MaterialLabel();
             this.editHorDeClas = new System.Windows.Forms.TabPage();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            this.btnDeleteClass = new MaterialSkin.Controls.MaterialButton();
+            this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
+            this.lbListClasses = new MaterialSkin.Controls.MaterialLabel();
             this.dgvClasses = new System.Windows.Forms.DataGridView();
+            this.btnDeleteClass = new MaterialSkin.Controls.MaterialButton();
             this.mepAddClassSchedule = new MaterialSkin.Controls.MaterialExpansionPanel();
             this.tbAddProfessorEmail = new MaterialSkin.Controls.MaterialTextBox2();
             this.tbAddProfessorName = new MaterialSkin.Controls.MaterialTextBox2();
@@ -72,33 +84,21 @@
             this.materialCheckbox11 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox12 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox13 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.cbUploadImg = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
-            this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
-            this.tbImgRoot = new MaterialSkin.Controls.MaterialTextBox();
-            this.btnSearchImg = new MaterialSkin.Controls.MaterialButton();
-            this.btnUploadImg = new MaterialSkin.Controls.MaterialButton();
-            this.picbImageSelected = new System.Windows.Forms.PictureBox();
-            this.lblTitleDateClass = new MaterialSkin.Controls.MaterialLabel();
-            this.lblTitleImg = new MaterialSkin.Controls.MaterialLabel();
-            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
-            this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
-            this.lbListClasses = new MaterialSkin.Controls.MaterialLabel();
             this.mtcMenu.SuspendLayout();
             this.SubirPet.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            this.materialCard6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbImageSelected)).BeginInit();
+            this.materialCard5.SuspendLayout();
             this.mepChecklistJustification.SuspendLayout();
             this.EditDatPer.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard4.SuspendLayout();
             this.editHorDeClas.SuspendLayout();
             this.materialCard3.SuspendLayout();
+            this.materialCard7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
             this.mepAddClassSchedule.SuspendLayout();
-            this.materialCard5.SuspendLayout();
-            this.materialCard6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbImageSelected)).BeginInit();
-            this.materialCard7.SuspendLayout();
             this.SuspendLayout();
             // 
             // mtcMenu
@@ -148,6 +148,151 @@
             this.materialCard1.Size = new System.Drawing.Size(1477, 741);
             this.materialCard1.TabIndex = 0;
             // 
+            // materialCard6
+            // 
+            this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialCard6.Controls.Add(this.lblTitleImg);
+            this.materialCard6.Controls.Add(this.picbImageSelected);
+            this.materialCard6.Controls.Add(this.btnUploadImg);
+            this.materialCard6.Controls.Add(this.btnSearchImg);
+            this.materialCard6.Controls.Add(this.tbImgRoot);
+            this.materialCard6.Depth = 0;
+            this.materialCard6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard6.Location = new System.Drawing.Point(489, 14);
+            this.materialCard6.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard6.Name = "materialCard6";
+            this.materialCard6.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard6.Size = new System.Drawing.Size(516, 713);
+            this.materialCard6.TabIndex = 6;
+            // 
+            // lblTitleImg
+            // 
+            this.lblTitleImg.Depth = 0;
+            this.lblTitleImg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitleImg.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblTitleImg.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lblTitleImg.Location = new System.Drawing.Point(14, 14);
+            this.lblTitleImg.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblTitleImg.Name = "lblTitleImg";
+            this.lblTitleImg.Size = new System.Drawing.Size(486, 31);
+            this.lblTitleImg.TabIndex = 6;
+            this.lblTitleImg.Text = "Imagen";
+            // 
+            // picbImageSelected
+            // 
+            this.picbImageSelected.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.picbImageSelected.Location = new System.Drawing.Point(14, 250);
+            this.picbImageSelected.Name = "picbImageSelected";
+            this.picbImageSelected.Size = new System.Drawing.Size(486, 447);
+            this.picbImageSelected.TabIndex = 3;
+            this.picbImageSelected.TabStop = false;
+            // 
+            // btnUploadImg
+            // 
+            this.btnUploadImg.AutoSize = false;
+            this.btnUploadImg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUploadImg.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnUploadImg.Depth = 0;
+            this.btnUploadImg.HighEmphasis = true;
+            this.btnUploadImg.Icon = null;
+            this.btnUploadImg.Location = new System.Drawing.Point(326, 153);
+            this.btnUploadImg.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnUploadImg.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUploadImg.Name = "btnUploadImg";
+            this.btnUploadImg.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnUploadImg.Size = new System.Drawing.Size(173, 36);
+            this.btnUploadImg.TabIndex = 2;
+            this.btnUploadImg.Text = "Subir Imagen";
+            this.btnUploadImg.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnUploadImg.UseAccentColor = false;
+            this.btnUploadImg.UseVisualStyleBackColor = true;
+            this.btnUploadImg.Click += new System.EventHandler(this.btnUploadImg_Click);
+            // 
+            // btnSearchImg
+            // 
+            this.btnSearchImg.AutoSize = false;
+            this.btnSearchImg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSearchImg.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnSearchImg.Depth = 0;
+            this.btnSearchImg.HighEmphasis = true;
+            this.btnSearchImg.Icon = null;
+            this.btnSearchImg.Location = new System.Drawing.Point(18, 153);
+            this.btnSearchImg.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSearchImg.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearchImg.Name = "btnSearchImg";
+            this.btnSearchImg.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnSearchImg.Size = new System.Drawing.Size(173, 36);
+            this.btnSearchImg.TabIndex = 1;
+            this.btnSearchImg.Text = "Buscar Imagen";
+            this.btnSearchImg.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnSearchImg.UseAccentColor = false;
+            this.btnSearchImg.UseVisualStyleBackColor = true;
+            this.btnSearchImg.Click += new System.EventHandler(this.btnSearchImg_Click);
+            // 
+            // tbImgRoot
+            // 
+            this.tbImgRoot.AnimateReadOnly = false;
+            this.tbImgRoot.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbImgRoot.Depth = 0;
+            this.tbImgRoot.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbImgRoot.Hint = "Ruta de imagen:";
+            this.tbImgRoot.LeadingIcon = null;
+            this.tbImgRoot.Location = new System.Drawing.Point(17, 77);
+            this.tbImgRoot.MaxLength = 50;
+            this.tbImgRoot.MouseState = MaterialSkin.MouseState.OUT;
+            this.tbImgRoot.Multiline = false;
+            this.tbImgRoot.Name = "tbImgRoot";
+            this.tbImgRoot.Size = new System.Drawing.Size(482, 50);
+            this.tbImgRoot.TabIndex = 0;
+            this.tbImgRoot.Text = "";
+            this.tbImgRoot.TrailingIcon = null;
+            // 
+            // materialCard5
+            // 
+            this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialCard5.Controls.Add(this.checkedListBox);
+            this.materialCard5.Controls.Add(this.lblTitleDateClass);
+            this.materialCard5.Controls.Add(this.dtpJustClass);
+            this.materialCard5.Controls.Add(this.lblDate);
+            this.materialCard5.Controls.Add(this.lblSelectClass);
+            this.materialCard5.Depth = 0;
+            this.materialCard5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard5.Location = new System.Drawing.Point(14, 14);
+            this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard5.Name = "materialCard5";
+            this.materialCard5.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard5.Size = new System.Drawing.Size(475, 713);
+            this.materialCard5.TabIndex = 5;
+            // 
+            // checkedListBox
+            // 
+            this.checkedListBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.checkedListBox.FormattingEnabled = true;
+            this.checkedListBox.Location = new System.Drawing.Point(14, 243);
+            this.checkedListBox.Name = "checkedListBox";
+            this.checkedListBox.Size = new System.Drawing.Size(445, 454);
+            this.checkedListBox.TabIndex = 6;
+            this.checkedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox_ItemCheck);
+            // 
+            // lblTitleDateClass
+            // 
+            this.lblTitleDateClass.Depth = 0;
+            this.lblTitleDateClass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitleDateClass.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblTitleDateClass.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lblTitleDateClass.Location = new System.Drawing.Point(14, 14);
+            this.lblTitleDateClass.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblTitleDateClass.Name = "lblTitleDateClass";
+            this.lblTitleDateClass.Size = new System.Drawing.Size(445, 31);
+            this.lblTitleDateClass.TabIndex = 5;
+            this.lblTitleDateClass.Text = "Fecha/Clase";
+            // 
             // dtpJustClass
             // 
             this.dtpJustClass.Location = new System.Drawing.Point(208, 92);
@@ -155,18 +300,6 @@
             this.dtpJustClass.Size = new System.Drawing.Size(200, 20);
             this.dtpJustClass.TabIndex = 4;
             this.dtpJustClass.ValueChanged += new System.EventHandler(this.dtpJustClass_ValueChanged);
-            // 
-            // lblSelectClass
-            // 
-            this.lblSelectClass.AutoSize = true;
-            this.lblSelectClass.Depth = 0;
-            this.lblSelectClass.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblSelectClass.Location = new System.Drawing.Point(26, 171);
-            this.lblSelectClass.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblSelectClass.Name = "lblSelectClass";
-            this.lblSelectClass.Size = new System.Drawing.Size(153, 19);
-            this.lblSelectClass.TabIndex = 3;
-            this.lblSelectClass.Text = "Seleccione una clase:";
             // 
             // lblDate
             // 
@@ -179,6 +312,18 @@
             this.lblDate.Size = new System.Drawing.Size(120, 19);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "Ingrese la Fecha:";
+            // 
+            // lblSelectClass
+            // 
+            this.lblSelectClass.AutoSize = true;
+            this.lblSelectClass.Depth = 0;
+            this.lblSelectClass.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblSelectClass.Location = new System.Drawing.Point(26, 171);
+            this.lblSelectClass.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSelectClass.Name = "lblSelectClass";
+            this.lblSelectClass.Size = new System.Drawing.Size(153, 19);
+            this.lblSelectClass.TabIndex = 3;
+            this.lblSelectClass.Text = "Seleccione una clase:";
             // 
             // mepChecklistJustification
             // 
@@ -205,6 +350,23 @@
             this.mepChecklistJustification.ValidationButtonText = "ENVIAR";
             this.mepChecklistJustification.SaveClick += new System.EventHandler(this.mepChecklistJustification_SaveClick);
             // 
+            // cbUploadImg
+            // 
+            this.cbUploadImg.AutoSize = true;
+            this.cbUploadImg.Depth = 0;
+            this.cbUploadImg.Location = new System.Drawing.Point(28, 233);
+            this.cbUploadImg.Margin = new System.Windows.Forms.Padding(0);
+            this.cbUploadImg.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbUploadImg.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbUploadImg.Name = "cbUploadImg";
+            this.cbUploadImg.ReadOnly = true;
+            this.cbUploadImg.Ripple = true;
+            this.cbUploadImg.Size = new System.Drawing.Size(232, 37);
+            this.cbUploadImg.TabIndex = 4;
+            this.cbUploadImg.Text = "Subir imagen de constancia";
+            this.cbUploadImg.UseVisualStyleBackColor = true;
+            this.cbUploadImg.CheckedChanged += new System.EventHandler(this.cbUploadImg_CheckedChanged);
+            // 
             // cbClass
             // 
             this.cbClass.AutoSize = true;
@@ -220,6 +382,7 @@
             this.cbClass.TabIndex = 3;
             this.cbClass.Text = "Escoger una Clase";
             this.cbClass.UseVisualStyleBackColor = true;
+            this.cbClass.CheckedChanged += new System.EventHandler(this.cbClass_CheckedChanged);
             // 
             // cbFecha
             // 
@@ -236,6 +399,7 @@
             this.cbFecha.TabIndex = 2;
             this.cbFecha.Text = "Seleccionar Fecha";
             this.cbFecha.UseVisualStyleBackColor = true;
+            this.cbFecha.CheckedChanged += new System.EventHandler(this.cbFecha_CheckedChanged);
             // 
             // EditDatPer
             // 
@@ -428,6 +592,44 @@
             this.materialCard3.Size = new System.Drawing.Size(1483, 747);
             this.materialCard3.TabIndex = 0;
             // 
+            // materialCard7
+            // 
+            this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard7.Controls.Add(this.lbListClasses);
+            this.materialCard7.Controls.Add(this.dgvClasses);
+            this.materialCard7.Controls.Add(this.btnDeleteClass);
+            this.materialCard7.Depth = 0;
+            this.materialCard7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard7.Location = new System.Drawing.Point(28, 28);
+            this.materialCard7.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard7.Name = "materialCard7";
+            this.materialCard7.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard7.Size = new System.Drawing.Size(828, 705);
+            this.materialCard7.TabIndex = 4;
+            // 
+            // lbListClasses
+            // 
+            this.lbListClasses.Depth = 0;
+            this.lbListClasses.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbListClasses.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbListClasses.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lbListClasses.Location = new System.Drawing.Point(14, 14);
+            this.lbListClasses.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbListClasses.Name = "lbListClasses";
+            this.lbListClasses.Size = new System.Drawing.Size(800, 31);
+            this.lbListClasses.TabIndex = 7;
+            this.lbListClasses.Text = "Clases de Estudiante:";
+            // 
+            // dgvClasses
+            // 
+            this.dgvClasses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClasses.Location = new System.Drawing.Point(17, 80);
+            this.dgvClasses.Name = "dgvClasses";
+            this.dgvClasses.Size = new System.Drawing.Size(781, 525);
+            this.dgvClasses.TabIndex = 2;
+            // 
             // btnDeleteClass
             // 
             this.btnDeleteClass.AutoSize = false;
@@ -448,15 +650,6 @@
             this.btnDeleteClass.UseAccentColor = false;
             this.btnDeleteClass.UseVisualStyleBackColor = true;
             this.btnDeleteClass.Click += new System.EventHandler(this.btnDeleteClass_Click);
-            // 
-            // dgvClasses
-            // 
-            this.dgvClasses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClasses.Location = new System.Drawing.Point(17, 80);
-            this.dgvClasses.Name = "dgvClasses";
-            this.dgvClasses.Size = new System.Drawing.Size(781, 525);
-            this.dgvClasses.TabIndex = 2;
             // 
             // mepAddClassSchedule
             // 
@@ -776,195 +969,6 @@
             this.materialCheckbox13.Text = "materialCheckbox13";
             this.materialCheckbox13.UseVisualStyleBackColor = true;
             // 
-            // cbUploadImg
-            // 
-            this.cbUploadImg.AutoSize = true;
-            this.cbUploadImg.Depth = 0;
-            this.cbUploadImg.Location = new System.Drawing.Point(28, 233);
-            this.cbUploadImg.Margin = new System.Windows.Forms.Padding(0);
-            this.cbUploadImg.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.cbUploadImg.MouseState = MaterialSkin.MouseState.HOVER;
-            this.cbUploadImg.Name = "cbUploadImg";
-            this.cbUploadImg.ReadOnly = true;
-            this.cbUploadImg.Ripple = true;
-            this.cbUploadImg.Size = new System.Drawing.Size(232, 37);
-            this.cbUploadImg.TabIndex = 4;
-            this.cbUploadImg.Text = "Subir imagen de constancia";
-            this.cbUploadImg.UseVisualStyleBackColor = true;
-            // 
-            // materialCard5
-            // 
-            this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.materialCard5.Controls.Add(this.checkedListBox);
-            this.materialCard5.Controls.Add(this.lblTitleDateClass);
-            this.materialCard5.Controls.Add(this.dtpJustClass);
-            this.materialCard5.Controls.Add(this.lblDate);
-            this.materialCard5.Controls.Add(this.lblSelectClass);
-            this.materialCard5.Depth = 0;
-            this.materialCard5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard5.Location = new System.Drawing.Point(14, 14);
-            this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard5.Name = "materialCard5";
-            this.materialCard5.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard5.Size = new System.Drawing.Size(475, 713);
-            this.materialCard5.TabIndex = 5;
-            // 
-            // materialCard6
-            // 
-            this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.materialCard6.Controls.Add(this.lblTitleImg);
-            this.materialCard6.Controls.Add(this.picbImageSelected);
-            this.materialCard6.Controls.Add(this.btnUploadImg);
-            this.materialCard6.Controls.Add(this.btnSearchImg);
-            this.materialCard6.Controls.Add(this.tbImgRoot);
-            this.materialCard6.Depth = 0;
-            this.materialCard6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard6.Location = new System.Drawing.Point(489, 14);
-            this.materialCard6.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard6.Name = "materialCard6";
-            this.materialCard6.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard6.Size = new System.Drawing.Size(516, 713);
-            this.materialCard6.TabIndex = 6;
-            // 
-            // tbImgRoot
-            // 
-            this.tbImgRoot.AnimateReadOnly = false;
-            this.tbImgRoot.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbImgRoot.Depth = 0;
-            this.tbImgRoot.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbImgRoot.Hint = "Ruta de imagen:";
-            this.tbImgRoot.LeadingIcon = null;
-            this.tbImgRoot.Location = new System.Drawing.Point(17, 77);
-            this.tbImgRoot.MaxLength = 50;
-            this.tbImgRoot.MouseState = MaterialSkin.MouseState.OUT;
-            this.tbImgRoot.Multiline = false;
-            this.tbImgRoot.Name = "tbImgRoot";
-            this.tbImgRoot.Size = new System.Drawing.Size(482, 50);
-            this.tbImgRoot.TabIndex = 0;
-            this.tbImgRoot.Text = "";
-            this.tbImgRoot.TrailingIcon = null;
-            // 
-            // btnSearchImg
-            // 
-            this.btnSearchImg.AutoSize = false;
-            this.btnSearchImg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSearchImg.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnSearchImg.Depth = 0;
-            this.btnSearchImg.HighEmphasis = true;
-            this.btnSearchImg.Icon = null;
-            this.btnSearchImg.Location = new System.Drawing.Point(18, 153);
-            this.btnSearchImg.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSearchImg.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSearchImg.Name = "btnSearchImg";
-            this.btnSearchImg.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSearchImg.Size = new System.Drawing.Size(173, 36);
-            this.btnSearchImg.TabIndex = 1;
-            this.btnSearchImg.Text = "Buscar Imagen";
-            this.btnSearchImg.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnSearchImg.UseAccentColor = false;
-            this.btnSearchImg.UseVisualStyleBackColor = true;
-            this.btnSearchImg.Click += new System.EventHandler(this.btnSearchImg_Click);
-            // 
-            // btnUploadImg
-            // 
-            this.btnUploadImg.AutoSize = false;
-            this.btnUploadImg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnUploadImg.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnUploadImg.Depth = 0;
-            this.btnUploadImg.HighEmphasis = true;
-            this.btnUploadImg.Icon = null;
-            this.btnUploadImg.Location = new System.Drawing.Point(326, 153);
-            this.btnUploadImg.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnUploadImg.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnUploadImg.Name = "btnUploadImg";
-            this.btnUploadImg.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnUploadImg.Size = new System.Drawing.Size(173, 36);
-            this.btnUploadImg.TabIndex = 2;
-            this.btnUploadImg.Text = "Subir Imagen";
-            this.btnUploadImg.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnUploadImg.UseAccentColor = false;
-            this.btnUploadImg.UseVisualStyleBackColor = true;
-            this.btnUploadImg.Click += new System.EventHandler(this.btnUploadImg_Click);
-            // 
-            // picbImageSelected
-            // 
-            this.picbImageSelected.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.picbImageSelected.Location = new System.Drawing.Point(14, 250);
-            this.picbImageSelected.Name = "picbImageSelected";
-            this.picbImageSelected.Size = new System.Drawing.Size(486, 447);
-            this.picbImageSelected.TabIndex = 3;
-            this.picbImageSelected.TabStop = false;
-            // 
-            // lblTitleDateClass
-            // 
-            this.lblTitleDateClass.Depth = 0;
-            this.lblTitleDateClass.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitleDateClass.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lblTitleDateClass.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lblTitleDateClass.Location = new System.Drawing.Point(14, 14);
-            this.lblTitleDateClass.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblTitleDateClass.Name = "lblTitleDateClass";
-            this.lblTitleDateClass.Size = new System.Drawing.Size(445, 31);
-            this.lblTitleDateClass.TabIndex = 5;
-            this.lblTitleDateClass.Text = "Fecha/Clase";
-            // 
-            // lblTitleImg
-            // 
-            this.lblTitleImg.Depth = 0;
-            this.lblTitleImg.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitleImg.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lblTitleImg.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lblTitleImg.Location = new System.Drawing.Point(14, 14);
-            this.lblTitleImg.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblTitleImg.Name = "lblTitleImg";
-            this.lblTitleImg.Size = new System.Drawing.Size(486, 31);
-            this.lblTitleImg.TabIndex = 6;
-            this.lblTitleImg.Text = "Imagen";
-            // 
-            // checkedListBox
-            // 
-            this.checkedListBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.checkedListBox.FormattingEnabled = true;
-            this.checkedListBox.Location = new System.Drawing.Point(14, 243);
-            this.checkedListBox.Name = "checkedListBox";
-            this.checkedListBox.Size = new System.Drawing.Size(445, 454);
-            this.checkedListBox.TabIndex = 6;
-            // 
-            // materialCard7
-            // 
-            this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard7.Controls.Add(this.lbListClasses);
-            this.materialCard7.Controls.Add(this.dgvClasses);
-            this.materialCard7.Controls.Add(this.btnDeleteClass);
-            this.materialCard7.Depth = 0;
-            this.materialCard7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard7.Location = new System.Drawing.Point(28, 28);
-            this.materialCard7.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard7.Name = "materialCard7";
-            this.materialCard7.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard7.Size = new System.Drawing.Size(828, 705);
-            this.materialCard7.TabIndex = 4;
-            // 
-            // lbListClasses
-            // 
-            this.lbListClasses.Depth = 0;
-            this.lbListClasses.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbListClasses.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lbListClasses.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lbListClasses.Location = new System.Drawing.Point(14, 14);
-            this.lbListClasses.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbListClasses.Name = "lbListClasses";
-            this.lbListClasses.Size = new System.Drawing.Size(800, 31);
-            this.lbListClasses.TabIndex = 7;
-            this.lbListClasses.Text = "Clases de Estudiante:";
-            // 
             // FormEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -980,6 +984,10 @@
             this.mtcMenu.ResumeLayout(false);
             this.SubirPet.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
+            this.materialCard6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picbImageSelected)).EndInit();
+            this.materialCard5.ResumeLayout(false);
+            this.materialCard5.PerformLayout();
             this.mepChecklistJustification.ResumeLayout(false);
             this.mepChecklistJustification.PerformLayout();
             this.EditDatPer.ResumeLayout(false);
@@ -988,14 +996,10 @@
             this.materialCard4.PerformLayout();
             this.editHorDeClas.ResumeLayout(false);
             this.materialCard3.ResumeLayout(false);
+            this.materialCard7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
             this.mepAddClassSchedule.ResumeLayout(false);
             this.mepAddClassSchedule.PerformLayout();
-            this.materialCard5.ResumeLayout(false);
-            this.materialCard5.PerformLayout();
-            this.materialCard6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picbImageSelected)).EndInit();
-            this.materialCard7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

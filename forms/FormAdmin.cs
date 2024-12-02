@@ -1,14 +1,17 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using ProyectoMarjorie.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoMarjorie.database;
 
 namespace ProyectoMarjorie.forms
 {
@@ -21,11 +24,24 @@ namespace ProyectoMarjorie.forms
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+            InitializeDataGridView();
         }
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
+            // Obtener todas las peticiones
+            List<Peticion> peticiones = DatabaseHelper.ObtenerTodasLasPeticiones();
 
+            // Limpiar el DataGridView antes de agregar nuevos datos
+            dgvPetList.Rows.Clear();
+
+            // Agregar las peticiones al DataGridView
+            foreach (var peticion in peticiones)
+            {
+                // Aquí agregas la información que deseas mostrar
+                dgvPetList.Rows.Add(peticion.Id, peticion.Estudiante.Nombre, peticion.Fecha.ToString("dd/MM/yyyy"), peticion.ClasesSeleccionadas.Count);
+            }
         }
 
         private void ActivateAddButton()
@@ -159,5 +175,86 @@ namespace ProyectoMarjorie.forms
             mepJustDetails.Collapse = false;
             mepRejectedPet.Collapse = true;
         }
+
+        public static List<Peticion> ObtenerPeticiones()
+        {
+            List<Peticion> peticiones = new List<Peticion>();
+
+            // Conexión a la base de datos
+            using (var conexion = new SQLiteConnection(DatabaseHelper.DatabasePath))
+            {
+                conexion.Open();
+
+                // Consulta para obtener las peticiones
+                string queryPeticiones = @"
+    SELECT p.IdPeticion, p.Fecha, p.CifEstudiante, p.Imagen
+    FROM Peticiones p";
+
+                // Consulta para obtener las clases asociadas a cada petición
+                string queryClases = @"
+    SELECT c.Nombre, c.NombreProfesor, c.CorreoProfesor
+    FROM Clases c
+    JOIN ClasesPeticiones cp ON cp.IdClase = c.IdClase
+    WHERE cp.IdPeticion = @IdPeticion";
+
+                using (var cmdPeticiones = new SQLiteCommand(queryPeticiones, conexion))
+                {
+                    using (var readerPeticiones = cmdPeticiones.ExecuteReader())
+                    {
+                        while (readerPeticiones.Read())
+                        {
+                            var peticion = new Peticion
+                            {
+                                Id = readerPeticiones.GetInt32(0),
+                                Fecha = readerPeticiones.GetDateTime(1),
+                                // Llamar a ObtenerEstudiantePorCif de forma estática
+                                Estudiante = DatabaseHelper.ObtenerEstudiantePorCif(readerPeticiones.GetInt32(2).ToString()),
+                                Imagen = readerPeticiones["Imagen"] as byte[],
+                                ClasesSeleccionadas = new List<Clase>() // Inicializamos la lista de clases
+                            };
+
+                            // Obtener las clases asociadas a esta petición
+                            using (var cmdClases = new SQLiteCommand(queryClases, conexion))
+                            {
+                                cmdClases.Parameters.AddWithValue("@IdPeticion", peticion.Id);
+                                using (var readerClases = cmdClases.ExecuteReader())
+                                {
+                                    while (readerClases.Read())
+                                    {
+                                        peticion.ClasesSeleccionadas.Add(new Clase
+                                        {
+                                            Nombre = readerClases.GetString(0),
+                                            NombreProfesor = readerClases.GetString(1),
+                                            CorreoProfesor = readerClases.GetString(2)
+                                        });
+                                    }
+                                }
+                            }
+
+                            // Añadir la petición a la lista
+                            peticiones.Add(peticion);
+                        }
+                    }
+                }
+            }
+
+            return peticiones;
+        }
+
+
+
+        private void InitializeDataGridView()
+        {
+            if (dgvPetList.Columns.Count == 0)
+            {
+                dgvPetList.Columns.Add("PeticionId", "ID");
+                dgvPetList.Columns.Add("EstudianteNombre", "Estudiante");
+                dgvPetList.Columns.Add("ClaseNombre", "Clase");
+                dgvPetList.Columns.Add("Fecha", "Fecha");
+                dgvPetList.Columns.Add("ProfesorNombre", "Profesor");
+            }
+        }
+
     }
+
 }

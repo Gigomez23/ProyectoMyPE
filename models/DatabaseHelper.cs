@@ -165,6 +165,34 @@ CREATE TABLE IF NOT EXISTS Usuarios (
         }
 
 
+        //public static Estudiante ObtenerEstudiantePorCif(string cifEstudiante)
+        //{
+        //    using (var conexion = new SQLiteConnection(DatabaseHelper.DatabasePath))
+        //    {
+        //        conexion.Open();
+        //        string query = "SELECT * FROM Estudiantes WHERE CifEstudiante = @CifEstudiante";
+
+        //        using (var cmd = new SQLiteCommand(query, conexion))
+        //        {
+        //            cmd.Parameters.AddWithValue("@CifEstudiante", cifEstudiante);
+        //            using (var reader = cmd.ExecuteReader())
+        //            {
+        //                if (reader.Read())
+        //                {
+        //                    return new Estudiante
+        //                    {
+        //                        CifEstudiante = reader.GetString(0),
+        //                        Nombre = reader.GetString(1),
+        //                        // Otros campos de la tabla Estudiantes
+        //                    };
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return null;  // Si no se encuentra el estudiante
+        //}
+
+
         public static Estudiante ObtenerEstudiantePorCif(string cif)
         {
             using (var conexion = new SQLiteConnection(DatabasePath))
@@ -191,33 +219,6 @@ CREATE TABLE IF NOT EXISTS Usuarios (
             }
             return null; // Si no encuentra al estudiante
         }
-
-        //public static Estudiante ObtenerEstudiantePorCif(string cif)
-        //{
-        //    using (var conexion = new SQLiteConnection(DatabasePath))
-        //    {
-        //        conexion.Open();
-        //        string query = "SELECT * FROM Estudiantes WHERE Cif = @Cif";
-
-        //        using (var cmd = new SQLiteCommand(query, conexion))
-        //        {
-        //            cmd.Parameters.AddWithValue("@Cif", cif);
-        //            using (var reader = cmd.ExecuteReader())
-        //            {
-        //                if (reader.Read())
-        //                {
-        //                    return new Estudiante
-        //                    {
-        //                        Cif = reader.GetInt32(0),
-        //                        Nombre = reader.GetString(1),
-        //                        FechaNacimiento = reader.GetDateTime(2)
-        //                    };
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return null; // Si no encuentra al estudiante
-        //}
 
 
         public static bool AgregarEstudiante(string nombre, string cif, DateTime fechaNacimiento)
@@ -523,6 +524,68 @@ CREATE TABLE IF NOT EXISTS Usuarios (
             }
         }
 
+        public static List<Peticion> ObtenerTodasLasPeticiones()
+        {
+            List<Peticion> peticiones = new List<Peticion>();
+
+            using (var conexion = new SQLiteConnection(DatabasePath))
+            {
+                conexion.Open();
+
+                // Consulta principal para obtener las peticiones
+                string queryPeticiones = @"
+            SELECT p.IdPeticion, p.Fecha, p.CifEstudiante, p.Imagen
+            FROM Peticiones p";
+
+                // Consulta para obtener las clases asociadas a cada petición
+                string queryClases = @"
+            SELECT c.Nombre, c.NombreProfesor, c.CorreoProfesor
+            FROM Clases c
+            JOIN ClasesPeticiones cp ON cp.IdClase = c.IdClase
+            WHERE cp.IdPeticion = @IdPeticion";
+
+                using (var cmdPeticiones = new SQLiteCommand(queryPeticiones, conexion))
+                {
+                    using (var readerPeticiones = cmdPeticiones.ExecuteReader())
+                    {
+                        while (readerPeticiones.Read())
+                        {
+                            var peticion = new Peticion
+                            {
+                                Id = readerPeticiones.GetInt32(0),
+                                Fecha = readerPeticiones.GetDateTime(1),
+                                Estudiante = ObtenerEstudiantePorCif(readerPeticiones.GetInt32(2).ToString()),
+                                Imagen = readerPeticiones["Imagen"] as byte[],
+                                ClasesSeleccionadas = new List<Clase>() // Inicializamos la lista de clases
+                            };
+
+                            // Obtener las clases asociadas a esta petición
+                            using (var cmdClases = new SQLiteCommand(queryClases, conexion))
+                            {
+                                cmdClases.Parameters.AddWithValue("@IdPeticion", peticion.Id);
+                                using (var readerClases = cmdClases.ExecuteReader())
+                                {
+                                    while (readerClases.Read())
+                                    {
+                                        peticion.ClasesSeleccionadas.Add(new Clase
+                                        {
+                                            Nombre = readerClases.GetString(0),
+                                            NombreProfesor = readerClases.GetString(1),
+                                            CorreoProfesor = readerClases.GetString(2)
+                                        });
+                                    }
+                                }
+                            }
+
+                            // Añadir la petición a la lista
+                            peticiones.Add(peticion);
+                        }
+                    }
+                }
+            }
+
+            return peticiones;
+        }
 
 
         public static Peticion ObtenerPeticion(int idPeticion)

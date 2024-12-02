@@ -33,10 +33,7 @@
             this.ImagenesDeMenu = new System.Windows.Forms.ImageList(this.components);
             this.mtcMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.ConfirmJust = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPetList = new System.Windows.Forms.DataGridView();
             this.mepJustDetails = new MaterialSkin.Controls.MaterialExpansionPanel();
             this.mlblEmailPreview = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.tbDate = new MaterialSkin.Controls.MaterialTextBox();
@@ -59,6 +56,13 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.CrearPet = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.lblStudenInfo = new MaterialSkin.Controls.MaterialLabel();
+            this.tbUsername = new MaterialSkin.Controls.MaterialTextBox2();
+            this.tbCifSendPet = new MaterialSkin.Controls.MaterialTextBox2();
+            this.btnAdd = new MaterialSkin.Controls.MaterialButton();
+            this.dtpPetDate = new System.Windows.Forms.DateTimePicker();
+            this.lblBirthDateSend = new MaterialSkin.Controls.MaterialLabel();
             this.mepSendJustNotice = new MaterialSkin.Controls.MaterialExpansionPanel();
             this.cbJustDateCompletion = new MaterialSkin.Controls.MaterialCheckbox();
             this.cbProfessorEmailCompletion = new MaterialSkin.Controls.MaterialCheckbox();
@@ -66,15 +70,10 @@
             this.cbProfessorName = new MaterialSkin.Controls.MaterialCheckbox();
             this.cbCifCompletion = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialDrawer1 = new MaterialSkin.Controls.MaterialDrawer();
-            this.dtpPetDate = new System.Windows.Forms.DateTimePicker();
-            this.lblBirthDateSend = new MaterialSkin.Controls.MaterialLabel();
-            this.btnAdd = new MaterialSkin.Controls.MaterialButton();
             this.mepAddProfessor = new MaterialSkin.Controls.MaterialExpansionPanel();
             this.btnAddOtherProfessor = new MaterialSkin.Controls.MaterialButton();
             this.tbProfessorEmail = new MaterialSkin.Controls.MaterialTextBox2();
             this.tbProfessorName = new MaterialSkin.Controls.MaterialTextBox2();
-            this.tbCifSendPet = new MaterialSkin.Controls.MaterialTextBox2();
-            this.tbUsername = new MaterialSkin.Controls.MaterialTextBox2();
             this.mltbEmailPreview = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.mepCreateUser = new MaterialSkin.Controls.MaterialExpansionPanel();
             this.btnAddClass = new MaterialSkin.Controls.MaterialButton();
@@ -90,21 +89,19 @@
             this.lblSelectClass = new MaterialSkin.Controls.MaterialLabel();
             this.materialCheckedListBox1 = new MaterialSkin.Controls.MaterialCheckedListBox();
             this.tbCifEntry = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.lblStudenInfo = new MaterialSkin.Controls.MaterialLabel();
             this.mtcMenu.SuspendLayout();
             this.ConfirmJust.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).BeginInit();
             this.mepJustDetails.SuspendLayout();
             this.mepRejectedPet.SuspendLayout();
             this.CrearPet.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            this.materialCard2.SuspendLayout();
             this.mepSendJustNotice.SuspendLayout();
             this.mepAddProfessor.SuspendLayout();
             this.mepCreateUser.SuspendLayout();
             this.mepFindStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
-            this.materialCard2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImagenesDeMenu
@@ -136,7 +133,7 @@
             // 
             // ConfirmJust
             // 
-            this.ConfirmJust.Controls.Add(this.dataGridView1);
+            this.ConfirmJust.Controls.Add(this.dgvPetList);
             this.ConfirmJust.Controls.Add(this.mepJustDetails);
             this.ConfirmJust.Controls.Add(this.mepRejectedPet);
             this.ConfirmJust.ImageKey = "Aprobar.png";
@@ -149,32 +146,14 @@
             this.ConfirmJust.ToolTipText = "Confirmar Justificaciónes de estudiantes.";
             this.ConfirmJust.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvPetList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Fecha,
-            this.NombreEstudiante,
-            this.Cif});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(590, 675);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // NombreEstudiante
-            // 
-            this.NombreEstudiante.HeaderText = "Nombre Estudiante";
-            this.NombreEstudiante.Name = "NombreEstudiante";
-            // 
-            // Cif
-            // 
-            this.Cif.HeaderText = "Cif";
-            this.Cif.Name = "Cif";
+            this.dgvPetList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPetList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPetList.Location = new System.Drawing.Point(29, 69);
+            this.dgvPetList.Name = "dgvPetList";
+            this.dgvPetList.Size = new System.Drawing.Size(590, 675);
+            this.dgvPetList.TabIndex = 3;
             // 
             // mepJustDetails
             // 
@@ -541,6 +520,143 @@
             this.materialCard1.Size = new System.Drawing.Size(1431, 787);
             this.materialCard1.TabIndex = 3;
             // 
+            // materialCard2
+            // 
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.lblStudenInfo);
+            this.materialCard2.Controls.Add(this.tbUsername);
+            this.materialCard2.Controls.Add(this.tbCifSendPet);
+            this.materialCard2.Controls.Add(this.btnAdd);
+            this.materialCard2.Controls.Add(this.dtpPetDate);
+            this.materialCard2.Controls.Add(this.lblBirthDateSend);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(14, 36);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(426, 371);
+            this.materialCard2.TabIndex = 23;
+            // 
+            // lblStudenInfo
+            // 
+            this.lblStudenInfo.Depth = 0;
+            this.lblStudenInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStudenInfo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblStudenInfo.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lblStudenInfo.Location = new System.Drawing.Point(14, 14);
+            this.lblStudenInfo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblStudenInfo.Name = "lblStudenInfo";
+            this.lblStudenInfo.Size = new System.Drawing.Size(398, 31);
+            this.lblStudenInfo.TabIndex = 8;
+            this.lblStudenInfo.Text = "Datos de Estudiante:";
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.AnimateReadOnly = false;
+            this.tbUsername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tbUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tbUsername.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tbUsername.Depth = 0;
+            this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbUsername.HideSelection = true;
+            this.tbUsername.Hint = "Nombre:";
+            this.tbUsername.LeadingIcon = null;
+            this.tbUsername.LeaveOnEnterKey = true;
+            this.tbUsername.Location = new System.Drawing.Point(40, 82);
+            this.tbUsername.MaxLength = 32767;
+            this.tbUsername.MouseState = MaterialSkin.MouseState.OUT;
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.PasswordChar = '\0';
+            this.tbUsername.PrefixSuffixText = null;
+            this.tbUsername.ReadOnly = false;
+            this.tbUsername.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbUsername.SelectedText = "";
+            this.tbUsername.SelectionLength = 0;
+            this.tbUsername.SelectionStart = 0;
+            this.tbUsername.ShortcutsEnabled = true;
+            this.tbUsername.Size = new System.Drawing.Size(342, 48);
+            this.tbUsername.TabIndex = 2;
+            this.tbUsername.TabStop = false;
+            this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbUsername.TrailingIcon = null;
+            this.tbUsername.UseSystemPasswordChar = false;
+            this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
+            // 
+            // tbCifSendPet
+            // 
+            this.tbCifSendPet.AnimateReadOnly = false;
+            this.tbCifSendPet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tbCifSendPet.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tbCifSendPet.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tbCifSendPet.Depth = 0;
+            this.tbCifSendPet.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tbCifSendPet.HideSelection = true;
+            this.tbCifSendPet.Hint = "Cif:";
+            this.tbCifSendPet.LeadingIcon = null;
+            this.tbCifSendPet.LeaveOnEnterKey = true;
+            this.tbCifSendPet.Location = new System.Drawing.Point(40, 164);
+            this.tbCifSendPet.MaxLength = 32767;
+            this.tbCifSendPet.MouseState = MaterialSkin.MouseState.OUT;
+            this.tbCifSendPet.Name = "tbCifSendPet";
+            this.tbCifSendPet.PasswordChar = '\0';
+            this.tbCifSendPet.PrefixSuffixText = null;
+            this.tbCifSendPet.ReadOnly = false;
+            this.tbCifSendPet.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbCifSendPet.SelectedText = "";
+            this.tbCifSendPet.SelectionLength = 0;
+            this.tbCifSendPet.SelectionStart = 0;
+            this.tbCifSendPet.ShortcutsEnabled = true;
+            this.tbCifSendPet.Size = new System.Drawing.Size(342, 48);
+            this.tbCifSendPet.TabIndex = 3;
+            this.tbCifSendPet.TabStop = false;
+            this.tbCifSendPet.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbCifSendPet.TrailingIcon = null;
+            this.tbCifSendPet.UseSystemPasswordChar = false;
+            this.tbCifSendPet.TextChanged += new System.EventHandler(this.tbCifSendPet_TextChanged);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoSize = false;
+            this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAdd.Depth = 0;
+            this.btnAdd.Enabled = false;
+            this.btnAdd.HighEmphasis = true;
+            this.btnAdd.Icon = null;
+            this.btnAdd.Location = new System.Drawing.Point(224, 303);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAdd.Size = new System.Drawing.Size(158, 36);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAdd.UseAccentColor = false;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // dtpPetDate
+            // 
+            this.dtpPetDate.Location = new System.Drawing.Point(182, 245);
+            this.dtpPetDate.Name = "dtpPetDate";
+            this.dtpPetDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpPetDate.TabIndex = 7;
+            this.dtpPetDate.ValueChanged += new System.EventHandler(this.dtpStudenBirthDate_ValueChanged);
+            // 
+            // lblBirthDateSend
+            // 
+            this.lblBirthDateSend.AutoSize = true;
+            this.lblBirthDateSend.Depth = 0;
+            this.lblBirthDateSend.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblBirthDateSend.Location = new System.Drawing.Point(37, 245);
+            this.lblBirthDateSend.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblBirthDateSend.Name = "lblBirthDateSend";
+            this.lblBirthDateSend.Size = new System.Drawing.Size(109, 19);
+            this.lblBirthDateSend.TabIndex = 6;
+            this.lblBirthDateSend.Text = "Fecha de Falta:";
+            // 
             // mepSendJustNotice
             // 
             this.mepSendJustNotice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -669,47 +785,6 @@
             this.materialDrawer1.Text = "materialDrawer1";
             this.materialDrawer1.UseColors = false;
             // 
-            // dtpPetDate
-            // 
-            this.dtpPetDate.Location = new System.Drawing.Point(182, 245);
-            this.dtpPetDate.Name = "dtpPetDate";
-            this.dtpPetDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpPetDate.TabIndex = 7;
-            this.dtpPetDate.ValueChanged += new System.EventHandler(this.dtpStudenBirthDate_ValueChanged);
-            // 
-            // lblBirthDateSend
-            // 
-            this.lblBirthDateSend.AutoSize = true;
-            this.lblBirthDateSend.Depth = 0;
-            this.lblBirthDateSend.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblBirthDateSend.Location = new System.Drawing.Point(37, 245);
-            this.lblBirthDateSend.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblBirthDateSend.Name = "lblBirthDateSend";
-            this.lblBirthDateSend.Size = new System.Drawing.Size(109, 19);
-            this.lblBirthDateSend.TabIndex = 6;
-            this.lblBirthDateSend.Text = "Fecha de Falta:";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.AutoSize = false;
-            this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnAdd.Depth = 0;
-            this.btnAdd.Enabled = false;
-            this.btnAdd.HighEmphasis = true;
-            this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(224, 303);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAdd.Size = new System.Drawing.Size(158, 36);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Agregar";
-            this.btnAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnAdd.UseAccentColor = false;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
             // mepAddProfessor
             // 
             this.mepAddProfessor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -819,70 +894,6 @@
             this.tbProfessorName.TrailingIcon = null;
             this.tbProfessorName.UseSystemPasswordChar = false;
             this.tbProfessorName.TextChanged += new System.EventHandler(this.tbProfessorName_TextChanged);
-            // 
-            // tbCifSendPet
-            // 
-            this.tbCifSendPet.AnimateReadOnly = false;
-            this.tbCifSendPet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tbCifSendPet.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.tbCifSendPet.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tbCifSendPet.Depth = 0;
-            this.tbCifSendPet.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbCifSendPet.HideSelection = true;
-            this.tbCifSendPet.Hint = "Cif:";
-            this.tbCifSendPet.LeadingIcon = null;
-            this.tbCifSendPet.LeaveOnEnterKey = true;
-            this.tbCifSendPet.Location = new System.Drawing.Point(40, 164);
-            this.tbCifSendPet.MaxLength = 32767;
-            this.tbCifSendPet.MouseState = MaterialSkin.MouseState.OUT;
-            this.tbCifSendPet.Name = "tbCifSendPet";
-            this.tbCifSendPet.PasswordChar = '\0';
-            this.tbCifSendPet.PrefixSuffixText = null;
-            this.tbCifSendPet.ReadOnly = false;
-            this.tbCifSendPet.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbCifSendPet.SelectedText = "";
-            this.tbCifSendPet.SelectionLength = 0;
-            this.tbCifSendPet.SelectionStart = 0;
-            this.tbCifSendPet.ShortcutsEnabled = true;
-            this.tbCifSendPet.Size = new System.Drawing.Size(342, 48);
-            this.tbCifSendPet.TabIndex = 3;
-            this.tbCifSendPet.TabStop = false;
-            this.tbCifSendPet.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbCifSendPet.TrailingIcon = null;
-            this.tbCifSendPet.UseSystemPasswordChar = false;
-            this.tbCifSendPet.TextChanged += new System.EventHandler(this.tbCifSendPet_TextChanged);
-            // 
-            // tbUsername
-            // 
-            this.tbUsername.AnimateReadOnly = false;
-            this.tbUsername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tbUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.tbUsername.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tbUsername.Depth = 0;
-            this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tbUsername.HideSelection = true;
-            this.tbUsername.Hint = "Nombre:";
-            this.tbUsername.LeadingIcon = null;
-            this.tbUsername.LeaveOnEnterKey = true;
-            this.tbUsername.Location = new System.Drawing.Point(40, 82);
-            this.tbUsername.MaxLength = 32767;
-            this.tbUsername.MouseState = MaterialSkin.MouseState.OUT;
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.PasswordChar = '\0';
-            this.tbUsername.PrefixSuffixText = null;
-            this.tbUsername.ReadOnly = false;
-            this.tbUsername.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbUsername.SelectedText = "";
-            this.tbUsername.SelectionLength = 0;
-            this.tbUsername.SelectionStart = 0;
-            this.tbUsername.ShortcutsEnabled = true;
-            this.tbUsername.Size = new System.Drawing.Size(342, 48);
-            this.tbUsername.TabIndex = 2;
-            this.tbUsername.TabStop = false;
-            this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbUsername.TrailingIcon = null;
-            this.tbUsername.UseSystemPasswordChar = false;
-            this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
             // 
             // mltbEmailPreview
             // 
@@ -1140,38 +1151,6 @@
             this.tbCifEntry.TrailingIcon = null;
             this.tbCifEntry.UseSystemPasswordChar = false;
             // 
-            // materialCard2
-            // 
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.lblStudenInfo);
-            this.materialCard2.Controls.Add(this.tbUsername);
-            this.materialCard2.Controls.Add(this.tbCifSendPet);
-            this.materialCard2.Controls.Add(this.btnAdd);
-            this.materialCard2.Controls.Add(this.dtpPetDate);
-            this.materialCard2.Controls.Add(this.lblBirthDateSend);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(14, 36);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(426, 371);
-            this.materialCard2.TabIndex = 23;
-            // 
-            // lblStudenInfo
-            // 
-            this.lblStudenInfo.Depth = 0;
-            this.lblStudenInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblStudenInfo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lblStudenInfo.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lblStudenInfo.Location = new System.Drawing.Point(14, 14);
-            this.lblStudenInfo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblStudenInfo.Name = "lblStudenInfo";
-            this.lblStudenInfo.Size = new System.Drawing.Size(398, 31);
-            this.lblStudenInfo.TabIndex = 8;
-            this.lblStudenInfo.Text = "Datos de Estudiante:";
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1187,7 +1166,7 @@
             this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.mtcMenu.ResumeLayout(false);
             this.ConfirmJust.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).EndInit();
             this.mepJustDetails.ResumeLayout(false);
             this.mepJustDetails.PerformLayout();
             this.mepRejectedPet.ResumeLayout(false);
@@ -1195,6 +1174,8 @@
             this.CrearPet.ResumeLayout(false);
             this.CrearPet.PerformLayout();
             this.materialCard1.ResumeLayout(false);
+            this.materialCard2.ResumeLayout(false);
+            this.materialCard2.PerformLayout();
             this.mepSendJustNotice.ResumeLayout(false);
             this.mepSendJustNotice.PerformLayout();
             this.mepAddProfessor.ResumeLayout(false);
@@ -1204,8 +1185,6 @@
             this.mepFindStudent.ResumeLayout(false);
             this.mepFindStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
-            this.materialCard2.ResumeLayout(false);
-            this.materialCard2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1263,10 +1242,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialTextBox tbNameRejected;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEstudiante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cif;
+        private System.Windows.Forms.DataGridView dgvPetList;
         private System.Windows.Forms.DataGridView dgvStudentList;
         private System.Windows.Forms.DataGridViewTextBoxColumn CifLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
