@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using ProyectoMarjorie.database;
 
 namespace ProyectoMarjorie.forms
@@ -18,6 +19,7 @@ namespace ProyectoMarjorie.forms
     public partial class FormEstudiante : MaterialForm
     {
         private Estudiante _estudiante;
+        private byte[] _imagenSeleccionada;
 
         public FormEstudiante(Estudiante estudiante)
         {
@@ -185,12 +187,12 @@ namespace ProyectoMarjorie.forms
             var clases = DatabaseHelper.ObtenerClasesDeEstudiante(_estudiante.Cif);
 
             // Limpiar los elementos existentes en el CheckedListBox
-            mclbClassesList.Items.Clear();
+            checkedListBox.Items.Clear();
 
-            // Añadir los nombres de las clases al MaterialCheckedListBox
+            // Añadir los nombres de las clases al CheckedListBox
             foreach (var clase in clases)
             {
-                mclbClassesList.Items.Add(clase.Nombre, false); // 'false' indica que no están seleccionadas por defecto
+                checkedListBox.Items.Add(clase.Nombre, false); // 'false' indica que no están seleccionadas por defecto
             }
         }
 
@@ -229,6 +231,88 @@ namespace ProyectoMarjorie.forms
             {
                 MessageBox.Show("Por favor, seleccione una clase para eliminar.");
             }
+        }
+
+        //funcion para buscar imagen en pc local filedialog?
+        private void btnSearchImg_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    picbImageSelected.Image = Image.FromFile(ofd.FileName);
+                    _imagenSeleccionada = File.ReadAllBytes(ofd.FileName); // Convertir a bytes
+                    MessageBox.Show("Imagen cargada con éxito.");
+                }
+            }
+        }
+
+        //funcion para agregar imagen a justificacion que se esta haciendo
+        private void btnUploadImg_Click(object sender, EventArgs e)
+        {
+            if (_imagenSeleccionada != null)
+            {
+                cbUploadImg.Checked = true;
+                MessageBox.Show("Imagen lista para ser subida con la petición.");
+            }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar una imagen.");
+            }
+        }
+
+        private void mepChecklistJustification_SaveClick(object sender, EventArgs e)
+        {
+            //Funcion que toma los datos para crear una peticion y subirla a la base de datos
+            //toma fecha de dtpJustClass
+            //agrega las clases checked desde mclbClassesList
+            // Crear una lista para almacenar los nombres de las clases seleccionadas
+            // Crear una lista para almacenar los nombres de las clases seleccionadas
+            List<string> clasesSeleccionadas = new List<string>();
+
+            // Obtener los nombres de las clases seleccionadas
+            foreach (var item in checkedListBox.CheckedItems)
+            {
+                clasesSeleccionadas.Add(item.ToString()); // Asegúrate de que cada item sea un string
+            }
+
+            // Validar que haya al menos una clase seleccionada
+            if (clasesSeleccionadas.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar al menos una clase.");
+                return;
+            }
+
+            // Validar que se haya seleccionado una imagen
+            if (_imagenSeleccionada == null)
+            {
+                MessageBox.Show("Debe subir una imagen antes de crear la petición.");
+                return;
+            }
+
+            // Obtener la fecha seleccionada
+            DateTime fechaPeticion = dtpJustClass.Value;
+
+            // Iterar sobre las clases seleccionadas y crear una petición por cada una
+            foreach (string nombreClase in clasesSeleccionadas)
+            {
+                bool resultado = DatabaseHelper.AgregarPeticion(nombreClase, _estudiante.Cif.ToString(), fechaPeticion, _imagenSeleccionada);
+                if (!resultado)
+                {
+                    MessageBox.Show($"Hubo un error al crear la petición para la clase: {nombreClase}");
+                }
+            }
+
+            MessageBox.Show("Todas las peticiones se han creado correctamente.");
+            resetearChecks();
+        }
+
+        private void resetearChecks()
+        {
+            cbClass.Checked = false;
+            cbFecha.Checked = false;
+            cbUploadImg.Checked = false;
         }
     }
 }

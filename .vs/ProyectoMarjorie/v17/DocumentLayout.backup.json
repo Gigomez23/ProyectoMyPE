@@ -3,44 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\forms\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:forms\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\forms\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:forms\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\forms\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:forms\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\forms\\formestudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:forms\\formestudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\formestudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:forms\\formestudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\models\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:models\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\forms\\formestudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:forms\\formestudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\models\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:models\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\models\\clase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:models\\clase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\peticion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:models\\peticion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|c:\\users\\comgo\\desktop\\college work\\semestre ii iv\\met. y prog. estr\\proyecto final\\proyectomarjorie\\forms\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E037407-214F-4848-85DE-6DDBAA588B8F}|ProyectoMarjorie.csproj|solutionrelative:forms\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,122 +50,71 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\LoginForm.cs",
-              "RelativeDocumentMoniker": "forms\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\LoginForm.cs [Design]",
-              "RelativeToolTip": "forms\\LoginForm.cs [Design]",
+              "DocumentIndex": 5,
+              "Title": "FormAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\FormAdmin.cs",
+              "RelativeDocumentMoniker": "forms\\FormAdmin.cs",
+              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\FormAdmin.cs",
+              "RelativeToolTip": "forms\\FormAdmin.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAewJIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:40:17.404Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CrearUsuario.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\CrearUsuario.cs",
-              "RelativeDocumentMoniker": "forms\\CrearUsuario.cs",
-              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\CrearUsuario.cs [Design]",
-              "RelativeToolTip": "forms\\CrearUsuario.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:39:14.543Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CrearUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\CrearUsuario.cs",
-              "RelativeDocumentMoniker": "forms\\CrearUsuario.cs",
-              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\CrearUsuario.cs",
-              "RelativeToolTip": "forms\\CrearUsuario.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAwwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:29:51.529Z",
+              "WhenOpened": "2024-12-02T04:54:28.966Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\LoginForm.cs",
-              "RelativeDocumentMoniker": "forms\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\LoginForm.cs",
-              "RelativeToolTip": "forms\\LoginForm.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAmwDYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:29:46.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "models\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\DatabaseHelper.cs",
-              "RelativeToolTip": "models\\DatabaseHelper.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAIwFIAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:23:07.538Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\Usuario.cs",
-              "RelativeDocumentMoniker": "models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\Usuario.cs",
-              "RelativeToolTip": "models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:20:39.455Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Estudiante.cs",
-              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\Estudiante.cs",
-              "RelativeDocumentMoniker": "models\\Estudiante.cs",
-              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\Estudiante.cs",
-              "RelativeToolTip": "models\\Estudiante.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:17:00.052Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Clase.cs",
               "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\Clase.cs",
               "RelativeDocumentMoniker": "models\\Clase.cs",
               "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\Clase.cs",
               "RelativeToolTip": "models\\Clase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T02:16:51.372Z",
+              "WhenOpened": "2024-12-02T04:20:42.823Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Peticion.cs",
-              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\Peticion.cs",
-              "RelativeDocumentMoniker": "models\\Peticion.cs",
-              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\Peticion.cs",
-              "RelativeToolTip": "models\\Peticion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "models\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\models\\DatabaseHelper.cs",
+              "RelativeToolTip": "models\\DatabaseHelper.cs",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAAwFEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T13:17:53.491Z",
+              "WhenOpened": "2024-12-02T04:16:52.855Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "FormAdmin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\FormAdmin.cs",
+              "RelativeDocumentMoniker": "forms\\FormAdmin.cs",
+              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\FormAdmin.cs [Design]",
+              "RelativeToolTip": "forms\\FormAdmin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T04:01:47.81Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormEstudiante.cs",
+              "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\FormEstudiante.cs",
+              "RelativeDocumentMoniker": "forms\\FormEstudiante.cs",
+              "ToolTip": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\FormEstudiante.cs",
+              "RelativeToolTip": "forms\\FormEstudiante.cs",
+              "ViewState": "AgIAAAIBAAAAAAAAAAAEwDMBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T03:59:28.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FormEstudiante.cs [Design]",
               "DocumentMoniker": "C:\\Users\\comgo\\Desktop\\College Work\\Semestre II IV\\Met. y prog. estr\\Proyecto Final\\ProyectoMarjorie\\forms\\FormEstudiante.cs",
               "RelativeDocumentMoniker": "forms\\FormEstudiante.cs",

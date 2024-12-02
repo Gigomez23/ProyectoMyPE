@@ -90,6 +90,8 @@
             this.lblSelectClass = new MaterialSkin.Controls.MaterialLabel();
             this.materialCheckedListBox1 = new MaterialSkin.Controls.MaterialCheckedListBox();
             this.tbCifEntry = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.lblStudenInfo = new MaterialSkin.Controls.MaterialLabel();
             this.mtcMenu.SuspendLayout();
             this.ConfirmJust.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -102,6 +104,7 @@
             this.mepCreateUser.SuspendLayout();
             this.mepFindStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
+            this.materialCard2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImagenesDeMenu
@@ -522,14 +525,10 @@
             this.materialCard1.AutoSize = true;
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialCard1.Controls.Add(this.materialCard2);
             this.materialCard1.Controls.Add(this.mepSendJustNotice);
             this.materialCard1.Controls.Add(this.materialDrawer1);
-            this.materialCard1.Controls.Add(this.dtpPetDate);
-            this.materialCard1.Controls.Add(this.lblBirthDateSend);
-            this.materialCard1.Controls.Add(this.btnAdd);
             this.materialCard1.Controls.Add(this.mepAddProfessor);
-            this.materialCard1.Controls.Add(this.tbCifSendPet);
-            this.materialCard1.Controls.Add(this.tbUsername);
             this.materialCard1.Controls.Add(this.mltbEmailPreview);
             this.materialCard1.Depth = 0;
             this.materialCard1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -672,7 +671,7 @@
             // 
             // dtpPetDate
             // 
-            this.dtpPetDate.Location = new System.Drawing.Point(177, 216);
+            this.dtpPetDate.Location = new System.Drawing.Point(182, 245);
             this.dtpPetDate.Name = "dtpPetDate";
             this.dtpPetDate.Size = new System.Drawing.Size(200, 20);
             this.dtpPetDate.TabIndex = 7;
@@ -683,12 +682,12 @@
             this.lblBirthDateSend.AutoSize = true;
             this.lblBirthDateSend.Depth = 0;
             this.lblBirthDateSend.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblBirthDateSend.Location = new System.Drawing.Point(32, 216);
+            this.lblBirthDateSend.Location = new System.Drawing.Point(37, 245);
             this.lblBirthDateSend.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblBirthDateSend.Name = "lblBirthDateSend";
-            this.lblBirthDateSend.Size = new System.Drawing.Size(48, 19);
+            this.lblBirthDateSend.Size = new System.Drawing.Size(109, 19);
             this.lblBirthDateSend.TabIndex = 6;
-            this.lblBirthDateSend.Text = "Fecha:";
+            this.lblBirthDateSend.Text = "Fecha de Falta:";
             // 
             // btnAdd
             // 
@@ -699,7 +698,7 @@
             this.btnAdd.Enabled = false;
             this.btnAdd.HighEmphasis = true;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(219, 290);
+            this.btnAdd.Location = new System.Drawing.Point(224, 303);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
@@ -833,7 +832,7 @@
             this.tbCifSendPet.Hint = "Cif:";
             this.tbCifSendPet.LeadingIcon = null;
             this.tbCifSendPet.LeaveOnEnterKey = true;
-            this.tbCifSendPet.Location = new System.Drawing.Point(35, 118);
+            this.tbCifSendPet.Location = new System.Drawing.Point(40, 164);
             this.tbCifSendPet.MaxLength = 32767;
             this.tbCifSendPet.MouseState = MaterialSkin.MouseState.OUT;
             this.tbCifSendPet.Name = "tbCifSendPet";
@@ -865,7 +864,7 @@
             this.tbUsername.Hint = "Nombre:";
             this.tbUsername.LeadingIcon = null;
             this.tbUsername.LeaveOnEnterKey = true;
-            this.tbUsername.Location = new System.Drawing.Point(35, 36);
+            this.tbUsername.Location = new System.Drawing.Point(40, 82);
             this.tbUsername.MaxLength = 32767;
             this.tbUsername.MouseState = MaterialSkin.MouseState.OUT;
             this.tbUsername.Name = "tbUsername";
@@ -1141,6 +1140,38 @@
             this.tbCifEntry.TrailingIcon = null;
             this.tbCifEntry.UseSystemPasswordChar = false;
             // 
+            // materialCard2
+            // 
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.lblStudenInfo);
+            this.materialCard2.Controls.Add(this.tbUsername);
+            this.materialCard2.Controls.Add(this.tbCifSendPet);
+            this.materialCard2.Controls.Add(this.btnAdd);
+            this.materialCard2.Controls.Add(this.dtpPetDate);
+            this.materialCard2.Controls.Add(this.lblBirthDateSend);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(14, 36);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(426, 371);
+            this.materialCard2.TabIndex = 23;
+            // 
+            // lblStudenInfo
+            // 
+            this.lblStudenInfo.Depth = 0;
+            this.lblStudenInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStudenInfo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblStudenInfo.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lblStudenInfo.Location = new System.Drawing.Point(14, 14);
+            this.lblStudenInfo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblStudenInfo.Name = "lblStudenInfo";
+            this.lblStudenInfo.Size = new System.Drawing.Size(398, 31);
+            this.lblStudenInfo.TabIndex = 8;
+            this.lblStudenInfo.Text = "Datos de Estudiante:";
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1164,7 +1195,6 @@
             this.CrearPet.ResumeLayout(false);
             this.CrearPet.PerformLayout();
             this.materialCard1.ResumeLayout(false);
-            this.materialCard1.PerformLayout();
             this.mepSendJustNotice.ResumeLayout(false);
             this.mepSendJustNotice.PerformLayout();
             this.mepAddProfessor.ResumeLayout(false);
@@ -1174,6 +1204,8 @@
             this.mepFindStudent.ResumeLayout(false);
             this.mepFindStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
+            this.materialCard2.ResumeLayout(false);
+            this.materialCard2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1239,5 +1271,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CifLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private MaterialSkin.Controls.MaterialCard materialCard2;
+        private MaterialSkin.Controls.MaterialLabel lblStudenInfo;
     }
 }

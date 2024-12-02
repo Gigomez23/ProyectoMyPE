@@ -28,44 +28,50 @@ namespace ProyectoMarjorie.models
 
                 // Crear las tablas
                 string sql = @"
-    CREATE TABLE IF NOT EXISTS Estudiantes (
-        Cif INTEGER PRIMARY KEY,
-        Nombre TEXT NOT NULL,
-        FechaNacimiento TEXT NOT NULL
-    );
+CREATE TABLE IF NOT EXISTS Estudiantes (
+    Cif INTEGER PRIMARY KEY,
+    Nombre TEXT NOT NULL,
+    FechaNacimiento TEXT NOT NULL
+);
 
-    CREATE TABLE IF NOT EXISTS Clases (
-        IdClase INTEGER PRIMARY KEY AUTOINCREMENT,
-        Nombre TEXT NOT NULL,
-        NombreProfesor TEXT,
-        CorreoProfesor TEXT
-    );
+CREATE TABLE IF NOT EXISTS Clases (
+    IdClase INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nombre TEXT NOT NULL,
+    NombreProfesor TEXT,
+    CorreoProfesor TEXT
+);
 
-    CREATE TABLE IF NOT EXISTS Peticiones (
-        IdPeticion INTEGER PRIMARY KEY AUTOINCREMENT,
-        Fecha TEXT NOT NULL,
-        IdClase INTEGER NOT NULL,
-        CifEstudiante INTEGER NOT NULL,
-        FOREIGN KEY (IdClase) REFERENCES Clases(IdClase),
-        FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif)
-    );
+CREATE TABLE IF NOT EXISTS Peticiones (
+    IdPeticion INTEGER PRIMARY KEY AUTOINCREMENT,
+    Fecha TEXT NOT NULL,
+    CifEstudiante INTEGER NOT NULL,
+    Imagen BLOB,  -- Agregar la columna para la imagen
+    FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif)
+);
 
-    CREATE TABLE IF NOT EXISTS Estudiantes_Clases (
-        CifEstudiante INTEGER NOT NULL,
-        IdClase INTEGER NOT NULL,
-        PRIMARY KEY (CifEstudiante, IdClase),
-        FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif),
-        FOREIGN KEY (IdClase) REFERENCES Clases(IdClase)
-    );
+CREATE TABLE IF NOT EXISTS ClasesPeticiones (
+    IdPeticion INTEGER NOT NULL,
+    IdClase INTEGER NOT NULL,
+    PRIMARY KEY (IdPeticion, IdClase),
+    FOREIGN KEY (IdPeticion) REFERENCES Peticiones(IdPeticion),
+    FOREIGN KEY (IdClase) REFERENCES Clases(IdClase)
+);
 
-    CREATE TABLE IF NOT EXISTS Usuarios (
-        nombreUsuario TEXT PRIMARY KEY,
-        contrasena TEXT NOT NULL,
-        CifEstudiante INTEGER NOT NULL,
-        FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif)
-    );
+CREATE TABLE IF NOT EXISTS Estudiantes_Clases (
+    CifEstudiante INTEGER NOT NULL,
+    IdClase INTEGER NOT NULL,
+    PRIMARY KEY (CifEstudiante, IdClase),
+    FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif),
+    FOREIGN KEY (IdClase) REFERENCES Clases(IdClase)
+);
+
+CREATE TABLE IF NOT EXISTS Usuarios (
+    nombreUsuario TEXT PRIMARY KEY,
+    contrasena TEXT NOT NULL,
+    CifEstudiante INTEGER NOT NULL,
+    FOREIGN KEY (CifEstudiante) REFERENCES Estudiantes(Cif)
+);
 ";
-
 
                 using (var cmd = new SQLiteCommand(sql, conexion))
                 {
@@ -74,6 +80,8 @@ namespace ProyectoMarjorie.models
                 }
             }
         }
+
+
 
 
         public static bool AgregarUsuario(string nombreUsuario, string contrasena, string cifEstudiante)
@@ -184,6 +192,34 @@ namespace ProyectoMarjorie.models
             return null; // Si no encuentra al estudiante
         }
 
+        //public static Estudiante ObtenerEstudiantePorCif(string cif)
+        //{
+        //    using (var conexion = new SQLiteConnection(DatabasePath))
+        //    {
+        //        conexion.Open();
+        //        string query = "SELECT * FROM Estudiantes WHERE Cif = @Cif";
+
+        //        using (var cmd = new SQLiteCommand(query, conexion))
+        //        {
+        //            cmd.Parameters.AddWithValue("@Cif", cif);
+        //            using (var reader = cmd.ExecuteReader())
+        //            {
+        //                if (reader.Read())
+        //                {
+        //                    return new Estudiante
+        //                    {
+        //                        Cif = reader.GetInt32(0),
+        //                        Nombre = reader.GetString(1),
+        //                        FechaNacimiento = reader.GetDateTime(2)
+        //                    };
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return null; // Si no encuentra al estudiante
+        //}
+
+
         public static bool AgregarEstudiante(string nombre, string cif, DateTime fechaNacimiento)
         {
             using (var conexion = new SQLiteConnection(DatabasePath))
@@ -273,7 +309,7 @@ namespace ProyectoMarjorie.models
         }
 
 
-        public static Clase? ObtenerClasePorNombre(string nombreClase)
+        public static Clase ObtenerClasePorNombre(string nombreClase)
         {
             using (var conexion = new SQLiteConnection(DatabasePath))
             {
@@ -297,8 +333,9 @@ namespace ProyectoMarjorie.models
                     }
                 }
             }
-            return null; // Esto ahora es válido porque el tipo es nullable
+            return null; // Esto es válido ya que 'Clase' es un tipo de referencia y puede ser 'null'
         }
+
 
 
         public static bool AsignarClaseAEstudiante(int cifEstudiante, string nombreClase)
@@ -347,8 +384,6 @@ namespace ProyectoMarjorie.models
         }
 
 
-
-
         public static void EliminarClaseDeEstudiante(int cifEstudiante, string nombreClase)
         {
             using (var conexion = new SQLiteConnection(DatabasePath))
@@ -392,7 +427,6 @@ namespace ProyectoMarjorie.models
             }
         }
 
-
         public static List<Clase> ObtenerClasesDeEstudiante(int cifEstudiante)
         {
             List<Clase> clases = new List<Clase>();
@@ -428,5 +462,134 @@ namespace ProyectoMarjorie.models
 
             return clases;
         }
+
+        public static bool AgregarPeticion(string nombreClase, string cifEstudiante, DateTime fecha, byte[] imagen)
+        {
+            using (var conexion = new SQLiteConnection(DatabasePath))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    // Obtener el ID de la clase usando el nombre
+                    string queryObtenerClaseId = "SELECT IdClase FROM Clases WHERE Nombre = @NombreClase";
+                    int idClase = -1;
+                    using (var cmdClaseId = new SQLiteCommand(queryObtenerClaseId, conexion))
+                    {
+                        cmdClaseId.Parameters.AddWithValue("@NombreClase", nombreClase);
+                        using (var reader = cmdClaseId.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                idClase = Convert.ToInt32(reader["IdClase"]);
+                            }
+                            else
+                            {
+                                MessageBox.Show($"No se encontró la clase con el nombre: {nombreClase}");
+                                return false;
+                            }
+                        }
+                    }
+
+                    // Insertar la petición en la tabla principal
+                    string queryPeticion = "INSERT INTO Peticiones (CifEstudiante, Fecha, Imagen) VALUES (@CifEstudiante, @Fecha, @Imagen)";
+                    using (var cmdPeticion = new SQLiteCommand(queryPeticion, conexion))
+                    {
+                        cmdPeticion.Parameters.AddWithValue("@CifEstudiante", cifEstudiante);
+                        cmdPeticion.Parameters.AddWithValue("@Fecha", fecha);
+                        cmdPeticion.Parameters.AddWithValue("@Imagen", imagen);
+                        cmdPeticion.ExecuteNonQuery();
+                    }
+
+                    // Obtener el ID de la última petición insertada
+                    int idPeticion = (int)conexion.LastInsertRowId;
+
+                    // Insertar la relación entre la petición y la clase
+                    string queryClasePeticion = "INSERT INTO ClasesPeticiones (IdPeticion, IdClase) VALUES (@IdPeticion, @IdClase)";
+                    using (var cmdClasePeticion = new SQLiteCommand(queryClasePeticion, conexion))
+                    {
+                        cmdClasePeticion.Parameters.AddWithValue("@IdPeticion", idPeticion);
+                        cmdClasePeticion.Parameters.AddWithValue("@IdClase", idClase);
+                        cmdClasePeticion.ExecuteNonQuery();
+                    }
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al agregar la petición: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+
+
+        public static Peticion ObtenerPeticion(int idPeticion)
+        {
+            using (var conexion = new SQLiteConnection(DatabasePath))
+            {
+                conexion.Open();
+
+                // Consulta principal para obtener los datos de la petición
+                string queryPeticion = @"
+            SELECT p.IdPeticion, p.Fecha, p.CifEstudiante, p.Imagen
+            FROM Peticiones p
+            WHERE p.IdPeticion = @IdPeticion";
+
+                // Consulta para obtener las clases asociadas a la petición
+                string queryClases = @"
+            SELECT c.Nombre, c.NombreProfesor, c.CorreoProfesor
+            FROM Clases c
+            JOIN ClasesPeticiones cp ON cp.IdClase = c.IdClase
+            WHERE cp.IdPeticion = @IdPeticion";
+
+                using (var cmdPeticion = new SQLiteCommand(queryPeticion, conexion))
+                {
+                    cmdPeticion.Parameters.AddWithValue("@IdPeticion", idPeticion);
+
+                    using (var readerPeticion = cmdPeticion.ExecuteReader())
+                    {
+                        if (readerPeticion.Read())
+                        {
+                            var peticion = new Peticion
+                            {
+                                Id = readerPeticion.GetInt32(0),
+                                Fecha = readerPeticion.GetDateTime(1),
+                                Estudiante = ObtenerEstudiantePorCif(readerPeticion.GetInt32(2).ToString()),
+                                Imagen = readerPeticion["Imagen"] as byte[],
+                                ClasesSeleccionadas = new List<Clase>() // Inicializamos la lista de clases
+                            };
+
+                            // Obtener las clases asociadas
+                            using (var cmdClases = new SQLiteCommand(queryClases, conexion))
+                            {
+                                cmdClases.Parameters.AddWithValue("@IdPeticion", idPeticion);
+                                using (var readerClases = cmdClases.ExecuteReader())
+                                {
+                                    while (readerClases.Read())
+                                    {
+                                        peticion.ClasesSeleccionadas.Add(new Clase
+                                        {
+                                            Nombre = readerClases.GetString(0),
+                                            NombreProfesor = readerClases.GetString(1),
+                                            CorreoProfesor = readerClases.GetString(2)
+                                        });
+                                    }
+                                }
+                            }
+
+                            return peticion;
+                        }
+                        else
+                        {
+                            return default; // Si no se encuentra la petición, devolver null o el valor predeterminado
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }
