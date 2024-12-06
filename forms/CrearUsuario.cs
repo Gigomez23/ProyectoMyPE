@@ -79,7 +79,7 @@ namespace ProyectoMarjorie.forms
 
         private void checkText()
         {
-            if (tbName.Text != "" && tbCif.Text != "")
+            if (tbName.Text != "" && tbCif.Text != "" && tbPassword.Text != "")
             {
                 btnAddUser.Enabled = true;
             }

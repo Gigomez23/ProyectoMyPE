@@ -178,6 +178,10 @@ namespace ProyectoMarjorie.forms
                 MessageBox.Show("Hubo un error al agregar la clase.");
             }
 
+            tbAddClassName.Text = "";  // Nombre de la clase
+            tbAddProfessorName.Text = "";  // Nombre del profesor
+            tbAddProfessorEmail.Text = "";  // Correo del profesor
+
         }
 
         //Función para cargar el material list box al igual que actualizar
@@ -233,7 +237,7 @@ namespace ProyectoMarjorie.forms
             }
         }
 
-        //funcion para buscar imagen en pc local filedialog?
+        //funcion para buscar imagen en pc local filedialog
         private void btnSearchImg_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -265,10 +269,6 @@ namespace ProyectoMarjorie.forms
         private void mepChecklistJustification_SaveClick(object sender, EventArgs e)
         {
             //Funcion que toma los datos para crear una peticion y subirla a la base de datos
-            //toma fecha de dtpJustClass
-            //agrega las clases checked desde mclbClassesList
-            // Crear una lista para almacenar los nombres de las clases seleccionadas
-            // Crear una lista para almacenar los nombres de las clases seleccionadas
             List<string> clasesSeleccionadas = new List<string>();
 
             // Obtener los nombres de las clases seleccionadas

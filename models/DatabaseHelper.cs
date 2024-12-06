@@ -165,34 +165,6 @@ CREATE TABLE IF NOT EXISTS Usuarios (
         }
 
 
-        //public static Estudiante ObtenerEstudiantePorCif(string cifEstudiante)
-        //{
-        //    using (var conexion = new SQLiteConnection(DatabaseHelper.DatabasePath))
-        //    {
-        //        conexion.Open();
-        //        string query = "SELECT * FROM Estudiantes WHERE CifEstudiante = @CifEstudiante";
-
-        //        using (var cmd = new SQLiteCommand(query, conexion))
-        //        {
-        //            cmd.Parameters.AddWithValue("@CifEstudiante", cifEstudiante);
-        //            using (var reader = cmd.ExecuteReader())
-        //            {
-        //                if (reader.Read())
-        //                {
-        //                    return new Estudiante
-        //                    {
-        //                        CifEstudiante = reader.GetString(0),
-        //                        Nombre = reader.GetString(1),
-        //                        // Otros campos de la tabla Estudiantes
-        //                    };
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return null;  // Si no se encuentra el estudiante
-        //}
-
-
         public static Estudiante ObtenerEstudiantePorCif(string cif)
         {
             using (var conexion = new SQLiteConnection(DatabasePath))
@@ -280,6 +252,36 @@ CREATE TABLE IF NOT EXISTS Usuarios (
                 }
             }
         }
+
+        public static List<Estudiante> ObtenerTodosLosEstudiantes()
+        {
+            List<Estudiante> estudiantes = new List<Estudiante>();
+
+            using (var conexion = new SQLiteConnection(DatabasePath))
+            {
+                conexion.Open();
+                string query = "SELECT * FROM Estudiantes";
+
+                using (var cmd = new SQLiteCommand(query, conexion))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            estudiantes.Add(new Estudiante
+                            {
+                                Cif = reader.GetInt32(0),
+                                Nombre = reader.GetString(1),
+                                FechaNacimiento = reader.GetDateTime(2)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return estudiantes;
+        }
+
 
         public static bool AgregarClaseAEstudiante(string nombre, string nombreProfesor, string correoProfesor)
         {
