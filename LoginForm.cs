@@ -26,6 +26,25 @@ namespace ProyectoMarjorie
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            launchUserForm();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            CrearUsuario crearUsuario = new CrearUsuario();
+            crearUsuario.ShowDialog();
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (tbUsername.Text != "")
+            {
+                btnLogin.Enabled = true;
+            }
+        }
+
+        private void launchUserForm()
+        {
             if (tbUsername.Text == "Admin" && tbPassword.Text == "Admin")
             {
                 FormAdmin formAdmin = new FormAdmin();
@@ -40,12 +59,6 @@ namespace ProyectoMarjorie
             {
                 MessageBox.Show("El Nombre do Usuario o Contraseña no es correcto");
             }
-        }
-
-        private void btnAddUser_Click(object sender, EventArgs e)
-        {
-            CrearUsuario crearUsuario = new CrearUsuario();
-            crearUsuario.ShowDialog();
         }
     }
 }

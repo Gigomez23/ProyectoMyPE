@@ -32,6 +32,8 @@
             this.tbPassword = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnLogin = new MaterialSkin.Controls.MaterialButton();
             this.btnAddUser = new MaterialSkin.Controls.MaterialButton();
+            this.pbUser = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
             // 
             // tbUsername
@@ -46,7 +48,7 @@
             this.tbUsername.Hint = "Usuario:";
             this.tbUsername.LeadingIcon = null;
             this.tbUsername.LeaveOnEnterKey = true;
-            this.tbUsername.Location = new System.Drawing.Point(135, 160);
+            this.tbUsername.Location = new System.Drawing.Point(135, 220);
             this.tbUsername.MaxLength = 32767;
             this.tbUsername.MouseState = MaterialSkin.MouseState.OUT;
             this.tbUsername.Name = "tbUsername";
@@ -76,7 +78,7 @@
             this.tbPassword.Hint = "Contraseña:";
             this.tbPassword.LeadingIcon = null;
             this.tbPassword.LeaveOnEnterKey = true;
-            this.tbPassword.Location = new System.Drawing.Point(135, 252);
+            this.tbPassword.Location = new System.Drawing.Point(135, 312);
             this.tbPassword.MaxLength = 32767;
             this.tbPassword.MouseState = MaterialSkin.MouseState.OUT;
             this.tbPassword.Name = "tbPassword";
@@ -95,6 +97,7 @@
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbPassword.TrailingIcon = null;
             this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // btnLogin
             // 
@@ -102,9 +105,10 @@
             this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnLogin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnLogin.Depth = 0;
+            this.btnLogin.Enabled = false;
             this.btnLogin.HighEmphasis = true;
             this.btnLogin.Icon = null;
-            this.btnLogin.Location = new System.Drawing.Point(279, 352);
+            this.btnLogin.Location = new System.Drawing.Point(279, 412);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
@@ -124,7 +128,7 @@
             this.btnAddUser.Depth = 0;
             this.btnAddUser.HighEmphasis = true;
             this.btnAddUser.Icon = null;
-            this.btnAddUser.Location = new System.Drawing.Point(81, 352);
+            this.btnAddUser.Location = new System.Drawing.Point(81, 412);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAddUser.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddUser.Name = "btnAddUser";
@@ -137,11 +141,24 @@
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
+            // pbUser
+            // 
+            this.pbUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbUser.Image = global::ProyectoMarjorie.Properties.Resources.user_stroke_rounded;
+            this.pbUser.ImageLocation = "Center";
+            this.pbUser.InitialImage = global::ProyectoMarjorie.Properties.Resources.user_stroke_rounded;
+            this.pbUser.Location = new System.Drawing.Point(184, 84);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(142, 102);
+            this.pbUser.TabIndex = 5;
+            this.pbUser.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 450);
+            this.ClientSize = new System.Drawing.Size(521, 529);
+            this.Controls.Add(this.pbUser);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbPassword);
@@ -151,6 +168,7 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +180,7 @@
         private MaterialSkin.Controls.MaterialTextBox2 tbPassword;
         private MaterialSkin.Controls.MaterialButton btnLogin;
         private MaterialSkin.Controls.MaterialButton btnAddUser;
+        private System.Windows.Forms.PictureBox pbUser;
     }
 }
 
